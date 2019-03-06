@@ -1,0 +1,8 @@
+[requires]
+cargo-generator/0.1.0@devolutions/stable
+mbedtls/2.16.0@devolutions/stable
+
+[generators]
+cargo
+json
+txt

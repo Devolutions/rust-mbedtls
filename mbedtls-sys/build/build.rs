@@ -20,6 +20,8 @@ use std::collections::HashMap;
 use std::env;
 use std::fs::File;
 use std::io::Write;
+use std::io::prelude::*;
+use std::process::Command;
 use std::path::{Path, PathBuf};
 
 pub fn have_feature(feature: &'static str) -> bool {
@@ -94,7 +96,42 @@ impl BuildConfig {
     }
 }
 
+fn run_conan() {
+    let profile = env::var("PROFILE").unwrap();
+    let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
+    let target_os = env::var("CARGO_CFG_TARGET_OS").unwrap();
+    let target_arch = env::var("CARGO_CFG_TARGET_ARCH").unwrap();
+    let manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR").unwrap());
+    let build_type = if profile == "debug" { "Debug" } else { "Release" };
+    let mut conan_file = manifest_dir.to_path_buf();
+    conan_file.push("build");
+    conan_file.push("conanfile.txt");
+
+    Command::new("conan")
+        .arg("install")
+        .arg("-pr")
+        .arg(format!("{}-{}", &target_os, &target_arch))
+        .arg("-s")
+        .arg(format!("build_type={}", &build_type))
+        .arg("-if")
+        .arg(&out_dir)
+        .arg(&conan_file.to_str().unwrap())
+        .output()
+        .expect("failed to execute conan");
+
+    let mut conan_build_info = out_dir.clone();
+    conan_build_info.push("conanbuildinfo.cargo");
+
+    let mut file = File::open(conan_build_info).expect("Error opening conanbuildinfo.cargo");
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).expect("Unable to read to string");
+    println!("{}", contents);
+}
+
 fn main() {
+    run_conan();
+    return;
+
     let out_dir = PathBuf::from(env::var_os("OUT_DIR").expect("OUT_DIR environment not set?"));
     let src = PathBuf::from(env::var("RUST_MBEDTLS_SYS_SOURCE").unwrap_or("vendor".to_owned()));
     let cfg = BuildConfig {

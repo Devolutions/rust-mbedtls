@@ -73,10 +73,10 @@ name = "server"
 path = "examples/server.rs"
 required-features = ["std"]
 
-[[test]]
-name = "client_server"
-path = "tests/client_server.rs"
-required-features = ["std"]
+#[[test]]
+#name = "client_server"
+#path = "tests/client_server.rs"
+#required-features = ["std"]
 
 [[test]]
 name = "ec"
@@ -102,7 +102,7 @@ path = "tests/rsa.rs"
 name = "save_restore"
 path = "tests/save_restore.rs"
 
-[[test]]
-name = "ssl_conf_verify"
-path = "tests/ssl_conf_verify.rs"
-required-features = ["std"]
+#[[test]]
+#name = "ssl_conf_verify"
+#path = "tests/ssl_conf_verify.rs"
+#required-features = ["std"]
