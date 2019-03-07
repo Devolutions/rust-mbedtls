@@ -6,11 +6,12 @@
  * option. This file may not be copied, modified, or distributed except
  * according to those terms. */
 
-extern crate cc;
+//extern crate cc;
 
 use std::env;
 
 fn main() {
+    /*
     let mut b = cc::Build::new();
     b.file("src/rust_printf.c");
     if env::var_os("CARGO_FEATURE_STD").is_none()
@@ -27,4 +28,14 @@ fn main() {
     println!("cargo:rustc-link-lib=static=mbedtls");
     println!("cargo:rustc-link-lib=static=mbedx509");
     println!("cargo:rustc-link-lib=static=mbedcrypto");
+    */
+
+    let target_os = env::var("CARGO_CFG_TARGET_OS").unwrap();
+
+    println!("cargo:rustc-cfg-feature=libc");
+    println!("cargo:rustc-cfg-feature=threading");
+
+    if target_os != "windows" {
+        println!("cargo:rustc-cfg-feature=pthread");
+    }
 }
