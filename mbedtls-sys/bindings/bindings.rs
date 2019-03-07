@@ -1628,7 +1628,7 @@ pub const ERR_ARC4_HW_ACCEL_FAILED: i32 = -25;
 pub const AESNI_AES: u32 = 33554432;
 pub const AESNI_CLMUL: u32 = 2;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_printf"]
+    #[link_name = "mbedtls_printf"]
     pub fn printf(format: *const raw_types::c_char, ...) -> raw_types::c_int;
 }
 pub type iso_c_forbids_empty_translation_units = raw_types::c_int;
@@ -2300,15 +2300,15 @@ pub struct _IO_FILE_plus {
     _unused: [u8; 0],
 }
 extern "C" {
-    #[link_name = "\u{1}_IO_2_1_stdin_"]
+    #[link_name = "_IO_2_1_stdin_"]
     pub static mut _IO_2_1_stdin_: _IO_FILE_plus;
 }
 extern "C" {
-    #[link_name = "\u{1}_IO_2_1_stdout_"]
+    #[link_name = "_IO_2_1_stdout_"]
     pub static mut _IO_2_1_stdout_: _IO_FILE_plus;
 }
 extern "C" {
-    #[link_name = "\u{1}_IO_2_1_stderr_"]
+    #[link_name = "_IO_2_1_stderr_"]
     pub static mut _IO_2_1_stderr_: _IO_FILE_plus;
 }
 pub type __io_read_fn = ::core::option::Option<
@@ -2406,15 +2406,15 @@ extern "C" {
 pub type off_t = __off_t;
 pub type fpos_t = _G_fpos_t;
 extern "C" {
-    #[link_name = "\u{1}stdin"]
+    #[link_name = "stdin"]
     pub static mut stdin: *mut _IO_FILE;
 }
 extern "C" {
-    #[link_name = "\u{1}stdout"]
+    #[link_name = "stdout"]
     pub static mut stdout: *mut _IO_FILE;
 }
 extern "C" {
-    #[link_name = "\u{1}stderr"]
+    #[link_name = "stderr"]
     pub static mut stderr: *mut _IO_FILE;
 }
 extern "C" {
@@ -2512,7 +2512,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}printf"]
+    #[link_name = "printf"]
     pub fn printf1(__format: *const raw_types::c_char, ...) -> raw_types::c_int;
 }
 extern "C" {
@@ -2587,7 +2587,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}__isoc99_fscanf"]
+    #[link_name = "__isoc99_fscanf"]
     pub fn fscanf1(
         __stream: *mut FILE,
         __format: *const raw_types::c_char,
@@ -2595,11 +2595,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}__isoc99_scanf"]
+    #[link_name = "__isoc99_scanf"]
     pub fn scanf1(__format: *const raw_types::c_char, ...) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}__isoc99_sscanf"]
+    #[link_name = "__isoc99_sscanf"]
     pub fn sscanf1(
         __s: *const raw_types::c_char,
         __format: *const raw_types::c_char,
@@ -2627,7 +2627,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}__isoc99_vfscanf"]
+    #[link_name = "__isoc99_vfscanf"]
     pub fn vfscanf1(
         __s: *mut FILE,
         __format: *const raw_types::c_char,
@@ -2635,14 +2635,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}__isoc99_vscanf"]
+    #[link_name = "__isoc99_vscanf"]
     pub fn vscanf1(
         __format: *const raw_types::c_char,
         __arg: *mut __va_list_tag,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}__isoc99_vsscanf"]
+    #[link_name = "__isoc99_vsscanf"]
     pub fn vsscanf1(
         __s: *const raw_types::c_char,
         __format: *const raw_types::c_char,
@@ -2813,11 +2813,11 @@ extern "C" {
     pub fn perror(__s: *const raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}sys_nerr"]
+    #[link_name = "sys_nerr"]
     pub static mut sys_nerr: raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}sys_errlist"]
+    #[link_name = "sys_errlist"]
     pub static mut sys_errlist: [*const raw_types::c_char; 0usize];
 }
 extern "C" {
@@ -2886,31 +2886,31 @@ fn bindgen_test_layout_mpi() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_init"]
+    #[link_name = "mbedtls_mpi_init"]
     pub fn mpi_init(X: *mut mpi);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_free"]
+    #[link_name = "mbedtls_mpi_free"]
     pub fn mpi_free(X: *mut mpi);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_grow"]
+    #[link_name = "mbedtls_mpi_grow"]
     pub fn mpi_grow(X: *mut mpi, nblimbs: usize) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_shrink"]
+    #[link_name = "mbedtls_mpi_shrink"]
     pub fn mpi_shrink(X: *mut mpi, nblimbs: usize) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_copy"]
+    #[link_name = "mbedtls_mpi_copy"]
     pub fn mpi_copy(X: *mut mpi, Y: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_swap"]
+    #[link_name = "mbedtls_mpi_swap"]
     pub fn mpi_swap(X: *mut mpi, Y: *mut mpi);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_safe_cond_assign"]
+    #[link_name = "mbedtls_mpi_safe_cond_assign"]
     pub fn mpi_safe_cond_assign(
         X: *mut mpi,
         Y: *const mpi,
@@ -2918,7 +2918,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_safe_cond_swap"]
+    #[link_name = "mbedtls_mpi_safe_cond_swap"]
     pub fn mpi_safe_cond_swap(
         X: *mut mpi,
         Y: *mut mpi,
@@ -2926,31 +2926,31 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_lset"]
+    #[link_name = "mbedtls_mpi_lset"]
     pub fn mpi_lset(X: *mut mpi, z: mpi_sint) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_get_bit"]
+    #[link_name = "mbedtls_mpi_get_bit"]
     pub fn mpi_get_bit(X: *const mpi, pos: usize) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_set_bit"]
+    #[link_name = "mbedtls_mpi_set_bit"]
     pub fn mpi_set_bit(X: *mut mpi, pos: usize, val: raw_types::c_uchar) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_lsb"]
+    #[link_name = "mbedtls_mpi_lsb"]
     pub fn mpi_lsb(X: *const mpi) -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_bitlen"]
+    #[link_name = "mbedtls_mpi_bitlen"]
     pub fn mpi_bitlen(X: *const mpi) -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_size"]
+    #[link_name = "mbedtls_mpi_size"]
     pub fn mpi_size(X: *const mpi) -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_read_string"]
+    #[link_name = "mbedtls_mpi_read_string"]
     pub fn mpi_read_string(
         X: *mut mpi,
         radix: raw_types::c_int,
@@ -2958,7 +2958,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_write_string"]
+    #[link_name = "mbedtls_mpi_write_string"]
     pub fn mpi_write_string(
         X: *const mpi,
         radix: raw_types::c_int,
@@ -2968,11 +2968,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_read_file"]
+    #[link_name = "mbedtls_mpi_read_file"]
     pub fn mpi_read_file(X: *mut mpi, radix: raw_types::c_int, fin: *mut FILE) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_write_file"]
+    #[link_name = "mbedtls_mpi_write_file"]
     pub fn mpi_write_file(
         p: *const raw_types::c_char,
         X: *const mpi,
@@ -2981,7 +2981,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_read_binary"]
+    #[link_name = "mbedtls_mpi_read_binary"]
     pub fn mpi_read_binary(
         X: *mut mpi,
         buf: *const raw_types::c_uchar,
@@ -2989,7 +2989,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_write_binary"]
+    #[link_name = "mbedtls_mpi_write_binary"]
     pub fn mpi_write_binary(
         X: *const mpi,
         buf: *mut raw_types::c_uchar,
@@ -2997,75 +2997,75 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_shift_l"]
+    #[link_name = "mbedtls_mpi_shift_l"]
     pub fn mpi_shift_l(X: *mut mpi, count: usize) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_shift_r"]
+    #[link_name = "mbedtls_mpi_shift_r"]
     pub fn mpi_shift_r(X: *mut mpi, count: usize) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_cmp_abs"]
+    #[link_name = "mbedtls_mpi_cmp_abs"]
     pub fn mpi_cmp_abs(X: *const mpi, Y: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_cmp_mpi"]
+    #[link_name = "mbedtls_mpi_cmp_mpi"]
     pub fn mpi_cmp_mpi(X: *const mpi, Y: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_cmp_int"]
+    #[link_name = "mbedtls_mpi_cmp_int"]
     pub fn mpi_cmp_int(X: *const mpi, z: mpi_sint) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_add_abs"]
+    #[link_name = "mbedtls_mpi_add_abs"]
     pub fn mpi_add_abs(X: *mut mpi, A: *const mpi, B: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_sub_abs"]
+    #[link_name = "mbedtls_mpi_sub_abs"]
     pub fn mpi_sub_abs(X: *mut mpi, A: *const mpi, B: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_add_mpi"]
+    #[link_name = "mbedtls_mpi_add_mpi"]
     pub fn mpi_add_mpi(X: *mut mpi, A: *const mpi, B: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_sub_mpi"]
+    #[link_name = "mbedtls_mpi_sub_mpi"]
     pub fn mpi_sub_mpi(X: *mut mpi, A: *const mpi, B: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_add_int"]
+    #[link_name = "mbedtls_mpi_add_int"]
     pub fn mpi_add_int(X: *mut mpi, A: *const mpi, b: mpi_sint) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_sub_int"]
+    #[link_name = "mbedtls_mpi_sub_int"]
     pub fn mpi_sub_int(X: *mut mpi, A: *const mpi, b: mpi_sint) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_mul_mpi"]
+    #[link_name = "mbedtls_mpi_mul_mpi"]
     pub fn mpi_mul_mpi(X: *mut mpi, A: *const mpi, B: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_mul_int"]
+    #[link_name = "mbedtls_mpi_mul_int"]
     pub fn mpi_mul_int(X: *mut mpi, A: *const mpi, b: mpi_uint) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_div_mpi"]
+    #[link_name = "mbedtls_mpi_div_mpi"]
     pub fn mpi_div_mpi(Q: *mut mpi, R: *mut mpi, A: *const mpi, B: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_div_int"]
+    #[link_name = "mbedtls_mpi_div_int"]
     pub fn mpi_div_int(Q: *mut mpi, R: *mut mpi, A: *const mpi, b: mpi_sint) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_mod_mpi"]
+    #[link_name = "mbedtls_mpi_mod_mpi"]
     pub fn mpi_mod_mpi(R: *mut mpi, A: *const mpi, B: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_mod_int"]
+    #[link_name = "mbedtls_mpi_mod_int"]
     pub fn mpi_mod_int(r: *mut mpi_uint, A: *const mpi, b: mpi_sint) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_exp_mod"]
+    #[link_name = "mbedtls_mpi_exp_mod"]
     pub fn mpi_exp_mod(
         X: *mut mpi,
         A: *const mpi,
@@ -3075,7 +3075,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_fill_random"]
+    #[link_name = "mbedtls_mpi_fill_random"]
     pub fn mpi_fill_random(
         X: *mut mpi,
         size: usize,
@@ -3090,15 +3090,15 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_gcd"]
+    #[link_name = "mbedtls_mpi_gcd"]
     pub fn mpi_gcd(G: *mut mpi, A: *const mpi, B: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_inv_mod"]
+    #[link_name = "mbedtls_mpi_inv_mod"]
     pub fn mpi_inv_mod(X: *mut mpi, A: *const mpi, N: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_is_prime"]
+    #[link_name = "mbedtls_mpi_is_prime"]
     pub fn mpi_is_prime(
         X: *const mpi,
         f_rng: ::core::option::Option<
@@ -3112,7 +3112,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_is_prime_ext"]
+    #[link_name = "mbedtls_mpi_is_prime_ext"]
     pub fn mpi_is_prime_ext(
         X: *const mpi,
         rounds: raw_types::c_int,
@@ -3130,7 +3130,7 @@ pub const MPI_GEN_PRIME_FLAG_DH: mpi_gen_prime_flag_t = 1;
 pub const MPI_GEN_PRIME_FLAG_LOW_ERR: mpi_gen_prime_flag_t = 2;
 pub type mpi_gen_prime_flag_t = u32;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_gen_prime"]
+    #[link_name = "mbedtls_mpi_gen_prime"]
     pub fn mpi_gen_prime(
         X: *mut mpi,
         nbits: usize,
@@ -3146,7 +3146,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mpi_self_test"]
+    #[link_name = "mbedtls_mpi_self_test"]
     pub fn mpi_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 pub const MD_NONE: md_type_t = 0;
@@ -3211,31 +3211,31 @@ fn bindgen_test_layout_md_context_t() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_list"]
+    #[link_name = "mbedtls_md_list"]
     pub fn md_list() -> *const raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_info_from_string"]
+    #[link_name = "mbedtls_md_info_from_string"]
     pub fn md_info_from_string(md_name: *const raw_types::c_char) -> *const md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_info_from_type"]
+    #[link_name = "mbedtls_md_info_from_type"]
     pub fn md_info_from_type(md_type: md_type_t) -> *const md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_init"]
+    #[link_name = "mbedtls_md_init"]
     pub fn md_init(ctx: *mut md_context_t);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_free"]
+    #[link_name = "mbedtls_md_free"]
     pub fn md_free(ctx: *mut md_context_t);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_init_ctx"]
+    #[link_name = "mbedtls_md_init_ctx"]
     pub fn md_init_ctx(ctx: *mut md_context_t, md_info: *const md_info_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_setup"]
+    #[link_name = "mbedtls_md_setup"]
     pub fn md_setup(
         ctx: *mut md_context_t,
         md_info: *const md_info_t,
@@ -3243,27 +3243,27 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_clone"]
+    #[link_name = "mbedtls_md_clone"]
     pub fn md_clone(dst: *mut md_context_t, src: *const md_context_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_get_size"]
+    #[link_name = "mbedtls_md_get_size"]
     pub fn md_get_size(md_info: *const md_info_t) -> raw_types::c_uchar;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_get_type"]
+    #[link_name = "mbedtls_md_get_type"]
     pub fn md_get_type(md_info: *const md_info_t) -> md_type_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_get_name"]
+    #[link_name = "mbedtls_md_get_name"]
     pub fn md_get_name(md_info: *const md_info_t) -> *const raw_types::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_starts"]
+    #[link_name = "mbedtls_md_starts"]
     pub fn md_starts(ctx: *mut md_context_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_update"]
+    #[link_name = "mbedtls_md_update"]
     pub fn md_update(
         ctx: *mut md_context_t,
         input: *const raw_types::c_uchar,
@@ -3271,11 +3271,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_finish"]
+    #[link_name = "mbedtls_md_finish"]
     pub fn md_finish(ctx: *mut md_context_t, output: *mut raw_types::c_uchar) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md"]
+    #[link_name = "mbedtls_md"]
     pub fn md(
         md_info: *const md_info_t,
         input: *const raw_types::c_uchar,
@@ -3284,7 +3284,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_file"]
+    #[link_name = "mbedtls_md_file"]
     pub fn md_file(
         md_info: *const md_info_t,
         path: *const raw_types::c_char,
@@ -3292,7 +3292,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_hmac_starts"]
+    #[link_name = "mbedtls_md_hmac_starts"]
     pub fn md_hmac_starts(
         ctx: *mut md_context_t,
         key: *const raw_types::c_uchar,
@@ -3300,7 +3300,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_hmac_update"]
+    #[link_name = "mbedtls_md_hmac_update"]
     pub fn md_hmac_update(
         ctx: *mut md_context_t,
         input: *const raw_types::c_uchar,
@@ -3308,18 +3308,18 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_hmac_finish"]
+    #[link_name = "mbedtls_md_hmac_finish"]
     pub fn md_hmac_finish(
         ctx: *mut md_context_t,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_hmac_reset"]
+    #[link_name = "mbedtls_md_hmac_reset"]
     pub fn md_hmac_reset(ctx: *mut md_context_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_hmac"]
+    #[link_name = "mbedtls_md_hmac"]
     pub fn md_hmac(
         md_info: *const md_info_t,
         key: *const raw_types::c_uchar,
@@ -3330,7 +3330,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md_process"]
+    #[link_name = "mbedtls_md_process"]
     pub fn md_process(ctx: *mut md_context_t, data: *const raw_types::c_uchar) -> raw_types::c_int;
 }
 pub const P_ALL: idtype_t = 0;
@@ -5666,30 +5666,30 @@ extern "C" {
         -> *mut raw_types::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}__tzname"]
+    #[link_name = "__tzname"]
     pub static mut __tzname: [*mut raw_types::c_char; 2usize];
 }
 extern "C" {
-    #[link_name = "\u{1}__daylight"]
+    #[link_name = "__daylight"]
     pub static mut __daylight: raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}__timezone"]
+    #[link_name = "__timezone"]
     pub static mut __timezone: raw_types::c_long;
 }
 extern "C" {
-    #[link_name = "\u{1}tzname"]
+    #[link_name = "tzname"]
     pub static mut tzname: [*mut raw_types::c_char; 2usize];
 }
 extern "C" {
     pub fn tzset();
 }
 extern "C" {
-    #[link_name = "\u{1}daylight"]
+    #[link_name = "daylight"]
     pub static mut daylight: raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}timezone"]
+    #[link_name = "timezone"]
     pub static mut timezone: raw_types::c_long;
 }
 extern "C" {
@@ -6586,43 +6586,43 @@ fn bindgen_test_layout_threading_mutex_t() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mutex_init"]
+    #[link_name = "mbedtls_mutex_init"]
     pub static mut mutex_init:
         ::core::option::Option<unsafe extern "C" fn(mutex: *mut threading_mutex_t)>;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mutex_free"]
+    #[link_name = "mbedtls_mutex_free"]
     pub static mut mutex_free:
         ::core::option::Option<unsafe extern "C" fn(mutex: *mut threading_mutex_t)>;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mutex_lock"]
+    #[link_name = "mbedtls_mutex_lock"]
     pub static mut mutex_lock: ::core::option::Option<
         unsafe extern "C" fn(mutex: *mut threading_mutex_t) -> raw_types::c_int,
     >;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mutex_unlock"]
+    #[link_name = "mbedtls_mutex_unlock"]
     pub static mut mutex_unlock: ::core::option::Option<
         unsafe extern "C" fn(mutex: *mut threading_mutex_t) -> raw_types::c_int,
     >;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_mutex_trylock"]
+    #[link_name = "mbedtls_mutex_trylock"]
     pub static mut mutex_trylock: ::core::option::Option<
         unsafe extern "C" fn(mutex: *mut threading_mutex_t) -> raw_types::c_int,
     >;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_threading_readdir_mutex"]
+    #[link_name = "mbedtls_threading_readdir_mutex"]
     pub static mut threading_readdir_mutex: threading_mutex_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_threading_gmtime_mutex"]
+    #[link_name = "mbedtls_threading_gmtime_mutex"]
     pub static mut threading_gmtime_mutex: threading_mutex_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_threading_trylock"]
+    #[link_name = "mbedtls_threading_trylock"]
     pub static mut threading_trylock: raw_types::c_int;
 }
 pub const ECP_DP_NONE: ecp_group_id = 0;
@@ -6995,71 +6995,71 @@ fn bindgen_test_layout_ecp_keypair() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_curve_list"]
+    #[link_name = "mbedtls_ecp_curve_list"]
     pub fn ecp_curve_list() -> *const ecp_curve_info;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_grp_id_list"]
+    #[link_name = "mbedtls_ecp_grp_id_list"]
     pub fn ecp_grp_id_list() -> *const ecp_group_id;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_curve_info_from_grp_id"]
+    #[link_name = "mbedtls_ecp_curve_info_from_grp_id"]
     pub fn ecp_curve_info_from_grp_id(grp_id: ecp_group_id) -> *const ecp_curve_info;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_curve_info_from_tls_id"]
+    #[link_name = "mbedtls_ecp_curve_info_from_tls_id"]
     pub fn ecp_curve_info_from_tls_id(tls_id: u16) -> *const ecp_curve_info;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_curve_info_from_name"]
+    #[link_name = "mbedtls_ecp_curve_info_from_name"]
     pub fn ecp_curve_info_from_name(name: *const raw_types::c_char) -> *const ecp_curve_info;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_point_init"]
+    #[link_name = "mbedtls_ecp_point_init"]
     pub fn ecp_point_init(pt: *mut ecp_point);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_group_init"]
+    #[link_name = "mbedtls_ecp_group_init"]
     pub fn ecp_group_init(grp: *mut ecp_group);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_keypair_init"]
+    #[link_name = "mbedtls_ecp_keypair_init"]
     pub fn ecp_keypair_init(key: *mut ecp_keypair);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_point_free"]
+    #[link_name = "mbedtls_ecp_point_free"]
     pub fn ecp_point_free(pt: *mut ecp_point);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_group_free"]
+    #[link_name = "mbedtls_ecp_group_free"]
     pub fn ecp_group_free(grp: *mut ecp_group);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_keypair_free"]
+    #[link_name = "mbedtls_ecp_keypair_free"]
     pub fn ecp_keypair_free(key: *mut ecp_keypair);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_copy"]
+    #[link_name = "mbedtls_ecp_copy"]
     pub fn ecp_copy(P: *mut ecp_point, Q: *const ecp_point) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_group_copy"]
+    #[link_name = "mbedtls_ecp_group_copy"]
     pub fn ecp_group_copy(dst: *mut ecp_group, src: *const ecp_group) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_set_zero"]
+    #[link_name = "mbedtls_ecp_set_zero"]
     pub fn ecp_set_zero(pt: *mut ecp_point) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_is_zero"]
+    #[link_name = "mbedtls_ecp_is_zero"]
     pub fn ecp_is_zero(pt: *mut ecp_point) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_point_cmp"]
+    #[link_name = "mbedtls_ecp_point_cmp"]
     pub fn ecp_point_cmp(P: *const ecp_point, Q: *const ecp_point) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_point_read_string"]
+    #[link_name = "mbedtls_ecp_point_read_string"]
     pub fn ecp_point_read_string(
         P: *mut ecp_point,
         radix: raw_types::c_int,
@@ -7068,7 +7068,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_point_write_binary"]
+    #[link_name = "mbedtls_ecp_point_write_binary"]
     pub fn ecp_point_write_binary(
         grp: *const ecp_group,
         P: *const ecp_point,
@@ -7079,7 +7079,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_point_read_binary"]
+    #[link_name = "mbedtls_ecp_point_read_binary"]
     pub fn ecp_point_read_binary(
         grp: *const ecp_group,
         P: *mut ecp_point,
@@ -7088,7 +7088,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_tls_read_point"]
+    #[link_name = "mbedtls_ecp_tls_read_point"]
     pub fn ecp_tls_read_point(
         grp: *const ecp_group,
         pt: *mut ecp_point,
@@ -7097,7 +7097,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_tls_write_point"]
+    #[link_name = "mbedtls_ecp_tls_write_point"]
     pub fn ecp_tls_write_point(
         grp: *const ecp_group,
         pt: *const ecp_point,
@@ -7108,11 +7108,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_group_load"]
+    #[link_name = "mbedtls_ecp_group_load"]
     pub fn ecp_group_load(grp: *mut ecp_group, id: ecp_group_id) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_tls_read_group"]
+    #[link_name = "mbedtls_ecp_tls_read_group"]
     pub fn ecp_tls_read_group(
         grp: *mut ecp_group,
         buf: *mut *const raw_types::c_uchar,
@@ -7120,7 +7120,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_tls_read_group_id"]
+    #[link_name = "mbedtls_ecp_tls_read_group_id"]
     pub fn ecp_tls_read_group_id(
         grp: *mut ecp_group_id,
         buf: *mut *const raw_types::c_uchar,
@@ -7128,7 +7128,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_tls_write_group"]
+    #[link_name = "mbedtls_ecp_tls_write_group"]
     pub fn ecp_tls_write_group(
         grp: *const ecp_group,
         olen: *mut usize,
@@ -7137,7 +7137,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_mul"]
+    #[link_name = "mbedtls_ecp_mul"]
     pub fn ecp_mul(
         grp: *mut ecp_group,
         R: *mut ecp_point,
@@ -7154,7 +7154,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_mul_restartable"]
+    #[link_name = "mbedtls_ecp_mul_restartable"]
     pub fn ecp_mul_restartable(
         grp: *mut ecp_group,
         R: *mut ecp_point,
@@ -7172,7 +7172,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_muladd"]
+    #[link_name = "mbedtls_ecp_muladd"]
     pub fn ecp_muladd(
         grp: *mut ecp_group,
         R: *mut ecp_point,
@@ -7183,7 +7183,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_muladd_restartable"]
+    #[link_name = "mbedtls_ecp_muladd_restartable"]
     pub fn ecp_muladd_restartable(
         grp: *mut ecp_group,
         R: *mut ecp_point,
@@ -7195,15 +7195,15 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_check_pubkey"]
+    #[link_name = "mbedtls_ecp_check_pubkey"]
     pub fn ecp_check_pubkey(grp: *const ecp_group, pt: *const ecp_point) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_check_privkey"]
+    #[link_name = "mbedtls_ecp_check_privkey"]
     pub fn ecp_check_privkey(grp: *const ecp_group, d: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_gen_privkey"]
+    #[link_name = "mbedtls_ecp_gen_privkey"]
     pub fn ecp_gen_privkey(
         grp: *const ecp_group,
         d: *mut mpi,
@@ -7218,7 +7218,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_gen_keypair_base"]
+    #[link_name = "mbedtls_ecp_gen_keypair_base"]
     pub fn ecp_gen_keypair_base(
         grp: *mut ecp_group,
         G: *const ecp_point,
@@ -7235,7 +7235,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_gen_keypair"]
+    #[link_name = "mbedtls_ecp_gen_keypair"]
     pub fn ecp_gen_keypair(
         grp: *mut ecp_group,
         d: *mut mpi,
@@ -7251,7 +7251,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_gen_key"]
+    #[link_name = "mbedtls_ecp_gen_key"]
     pub fn ecp_gen_key(
         grp_id: ecp_group_id,
         key: *mut ecp_keypair,
@@ -7266,14 +7266,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_check_pub_priv"]
+    #[link_name = "mbedtls_ecp_check_pub_priv"]
     pub fn ecp_check_pub_priv(
         pub_: *const ecp_keypair,
         prv: *const ecp_keypair,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecp_self_test"]
+    #[link_name = "mbedtls_ecp_self_test"]
     pub fn ecp_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -7492,11 +7492,11 @@ fn bindgen_test_layout_rsa_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_init"]
+    #[link_name = "mbedtls_rsa_init"]
     pub fn rsa_init(ctx: *mut rsa_context, padding: raw_types::c_int, hash_id: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_import"]
+    #[link_name = "mbedtls_rsa_import"]
     pub fn rsa_import(
         ctx: *mut rsa_context,
         N: *const mpi,
@@ -7507,7 +7507,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_import_raw"]
+    #[link_name = "mbedtls_rsa_import_raw"]
     pub fn rsa_import_raw(
         ctx: *mut rsa_context,
         N: *const raw_types::c_uchar,
@@ -7523,11 +7523,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_complete"]
+    #[link_name = "mbedtls_rsa_complete"]
     pub fn rsa_complete(ctx: *mut rsa_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_export"]
+    #[link_name = "mbedtls_rsa_export"]
     pub fn rsa_export(
         ctx: *const rsa_context,
         N: *mut mpi,
@@ -7538,7 +7538,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_export_raw"]
+    #[link_name = "mbedtls_rsa_export_raw"]
     pub fn rsa_export_raw(
         ctx: *const rsa_context,
         N: *mut raw_types::c_uchar,
@@ -7554,7 +7554,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_export_crt"]
+    #[link_name = "mbedtls_rsa_export_crt"]
     pub fn rsa_export_crt(
         ctx: *const rsa_context,
         DP: *mut mpi,
@@ -7563,7 +7563,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_set_padding"]
+    #[link_name = "mbedtls_rsa_set_padding"]
     pub fn rsa_set_padding(
         ctx: *mut rsa_context,
         padding: raw_types::c_int,
@@ -7571,11 +7571,11 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_get_len"]
+    #[link_name = "mbedtls_rsa_get_len"]
     pub fn rsa_get_len(ctx: *const rsa_context) -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_gen_key"]
+    #[link_name = "mbedtls_rsa_gen_key"]
     pub fn rsa_gen_key(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7591,22 +7591,22 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_check_pubkey"]
+    #[link_name = "mbedtls_rsa_check_pubkey"]
     pub fn rsa_check_pubkey(ctx: *const rsa_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_check_privkey"]
+    #[link_name = "mbedtls_rsa_check_privkey"]
     pub fn rsa_check_privkey(ctx: *const rsa_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_check_pub_priv"]
+    #[link_name = "mbedtls_rsa_check_pub_priv"]
     pub fn rsa_check_pub_priv(
         pub_: *const rsa_context,
         prv: *const rsa_context,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_public"]
+    #[link_name = "mbedtls_rsa_public"]
     pub fn rsa_public(
         ctx: *mut rsa_context,
         input: *const raw_types::c_uchar,
@@ -7614,7 +7614,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_private"]
+    #[link_name = "mbedtls_rsa_private"]
     pub fn rsa_private(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7630,7 +7630,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_pkcs1_encrypt"]
+    #[link_name = "mbedtls_rsa_pkcs1_encrypt"]
     pub fn rsa_pkcs1_encrypt(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7648,7 +7648,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsaes_pkcs1_v15_encrypt"]
+    #[link_name = "mbedtls_rsa_rsaes_pkcs1_v15_encrypt"]
     pub fn rsa_rsaes_pkcs1_v15_encrypt(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7666,7 +7666,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsaes_oaep_encrypt"]
+    #[link_name = "mbedtls_rsa_rsaes_oaep_encrypt"]
     pub fn rsa_rsaes_oaep_encrypt(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7686,7 +7686,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_pkcs1_decrypt"]
+    #[link_name = "mbedtls_rsa_pkcs1_decrypt"]
     pub fn rsa_pkcs1_decrypt(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7705,7 +7705,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsaes_pkcs1_v15_decrypt"]
+    #[link_name = "mbedtls_rsa_rsaes_pkcs1_v15_decrypt"]
     pub fn rsa_rsaes_pkcs1_v15_decrypt(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7724,7 +7724,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsaes_oaep_decrypt"]
+    #[link_name = "mbedtls_rsa_rsaes_oaep_decrypt"]
     pub fn rsa_rsaes_oaep_decrypt(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7745,7 +7745,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_pkcs1_sign"]
+    #[link_name = "mbedtls_rsa_pkcs1_sign"]
     pub fn rsa_pkcs1_sign(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7764,7 +7764,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsassa_pkcs1_v15_sign"]
+    #[link_name = "mbedtls_rsa_rsassa_pkcs1_v15_sign"]
     pub fn rsa_rsassa_pkcs1_v15_sign(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7783,7 +7783,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsassa_pss_sign"]
+    #[link_name = "mbedtls_rsa_rsassa_pss_sign"]
     pub fn rsa_rsassa_pss_sign(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7802,7 +7802,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_pkcs1_verify"]
+    #[link_name = "mbedtls_rsa_pkcs1_verify"]
     pub fn rsa_pkcs1_verify(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7821,7 +7821,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsassa_pkcs1_v15_verify"]
+    #[link_name = "mbedtls_rsa_rsassa_pkcs1_v15_verify"]
     pub fn rsa_rsassa_pkcs1_v15_verify(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7840,7 +7840,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsassa_pss_verify"]
+    #[link_name = "mbedtls_rsa_rsassa_pss_verify"]
     pub fn rsa_rsassa_pss_verify(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7859,7 +7859,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_rsassa_pss_verify_ext"]
+    #[link_name = "mbedtls_rsa_rsassa_pss_verify_ext"]
     pub fn rsa_rsassa_pss_verify_ext(
         ctx: *mut rsa_context,
         f_rng: ::core::option::Option<
@@ -7880,21 +7880,21 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_copy"]
+    #[link_name = "mbedtls_rsa_copy"]
     pub fn rsa_copy(dst: *mut rsa_context, src: *const rsa_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_free"]
+    #[link_name = "mbedtls_rsa_free"]
     pub fn rsa_free(ctx: *mut rsa_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_self_test"]
+    #[link_name = "mbedtls_rsa_self_test"]
     pub fn rsa_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 pub type ecdsa_context = ecp_keypair;
 pub type ecdsa_restart_ctx = raw_types::c_void;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_sign"]
+    #[link_name = "mbedtls_ecdsa_sign"]
     pub fn ecdsa_sign(
         grp: *mut ecp_group,
         r: *mut mpi,
@@ -7913,7 +7913,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_sign_det"]
+    #[link_name = "mbedtls_ecdsa_sign_det"]
     pub fn ecdsa_sign_det(
         grp: *mut ecp_group,
         r: *mut mpi,
@@ -7925,7 +7925,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_verify"]
+    #[link_name = "mbedtls_ecdsa_verify"]
     pub fn ecdsa_verify(
         grp: *mut ecp_group,
         buf: *const raw_types::c_uchar,
@@ -7936,7 +7936,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_write_signature"]
+    #[link_name = "mbedtls_ecdsa_write_signature"]
     pub fn ecdsa_write_signature(
         ctx: *mut ecdsa_context,
         md_alg: md_type_t,
@@ -7955,7 +7955,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_write_signature_restartable"]
+    #[link_name = "mbedtls_ecdsa_write_signature_restartable"]
     pub fn ecdsa_write_signature_restartable(
         ctx: *mut ecdsa_context,
         md_alg: md_type_t,
@@ -7975,7 +7975,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_write_signature_det"]
+    #[link_name = "mbedtls_ecdsa_write_signature_det"]
     pub fn ecdsa_write_signature_det(
         ctx: *mut ecdsa_context,
         hash: *const raw_types::c_uchar,
@@ -7986,7 +7986,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_read_signature"]
+    #[link_name = "mbedtls_ecdsa_read_signature"]
     pub fn ecdsa_read_signature(
         ctx: *mut ecdsa_context,
         hash: *const raw_types::c_uchar,
@@ -7996,7 +7996,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_read_signature_restartable"]
+    #[link_name = "mbedtls_ecdsa_read_signature_restartable"]
     pub fn ecdsa_read_signature_restartable(
         ctx: *mut ecdsa_context,
         hash: *const raw_types::c_uchar,
@@ -8007,7 +8007,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_genkey"]
+    #[link_name = "mbedtls_ecdsa_genkey"]
     pub fn ecdsa_genkey(
         ctx: *mut ecdsa_context,
         gid: ecp_group_id,
@@ -8022,16 +8022,16 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_from_keypair"]
+    #[link_name = "mbedtls_ecdsa_from_keypair"]
     pub fn ecdsa_from_keypair(ctx: *mut ecdsa_context, key: *const ecp_keypair)
         -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_init"]
+    #[link_name = "mbedtls_ecdsa_init"]
     pub fn ecdsa_init(ctx: *mut ecdsa_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_free"]
+    #[link_name = "mbedtls_ecdsa_free"]
     pub fn ecdsa_free(ctx: *mut ecdsa_context);
 }
 #[repr(C)]
@@ -8235,7 +8235,7 @@ fn bindgen_test_layout_asn1_named_data() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_len"]
+    #[link_name = "mbedtls_asn1_get_len"]
     pub fn asn1_get_len(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8243,7 +8243,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_tag"]
+    #[link_name = "mbedtls_asn1_get_tag"]
     pub fn asn1_get_tag(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8252,7 +8252,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_bool"]
+    #[link_name = "mbedtls_asn1_get_bool"]
     pub fn asn1_get_bool(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8260,7 +8260,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_int"]
+    #[link_name = "mbedtls_asn1_get_int"]
     pub fn asn1_get_int(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8268,7 +8268,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_bitstring"]
+    #[link_name = "mbedtls_asn1_get_bitstring"]
     pub fn asn1_get_bitstring(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8276,7 +8276,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_bitstring_null"]
+    #[link_name = "mbedtls_asn1_get_bitstring_null"]
     pub fn asn1_get_bitstring_null(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8284,7 +8284,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_sequence_of"]
+    #[link_name = "mbedtls_asn1_get_sequence_of"]
     pub fn asn1_get_sequence_of(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8293,7 +8293,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_mpi"]
+    #[link_name = "mbedtls_asn1_get_mpi"]
     pub fn asn1_get_mpi(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8301,7 +8301,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_alg"]
+    #[link_name = "mbedtls_asn1_get_alg"]
     pub fn asn1_get_alg(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8310,7 +8310,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_get_alg_null"]
+    #[link_name = "mbedtls_asn1_get_alg_null"]
     pub fn asn1_get_alg_null(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8318,7 +8318,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_find_named_data"]
+    #[link_name = "mbedtls_asn1_find_named_data"]
     pub fn asn1_find_named_data(
         list: *mut asn1_named_data,
         oid: *const raw_types::c_char,
@@ -8326,11 +8326,11 @@ extern "C" {
     ) -> *mut asn1_named_data;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_free_named_data"]
+    #[link_name = "mbedtls_asn1_free_named_data"]
     pub fn asn1_free_named_data(entry: *mut asn1_named_data);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_free_named_data_list"]
+    #[link_name = "mbedtls_asn1_free_named_data_list"]
     pub fn asn1_free_named_data_list(head: *mut *mut asn1_named_data);
 }
 pub const PK_NONE: pk_type_t = 0;
@@ -8510,23 +8510,23 @@ pub type pk_rsa_alt_sign_func = ::core::option::Option<
 pub type pk_rsa_alt_key_len_func =
     ::core::option::Option<unsafe extern "C" fn(ctx: *mut raw_types::c_void) -> usize>;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_info_from_type"]
+    #[link_name = "mbedtls_pk_info_from_type"]
     pub fn pk_info_from_type(pk_type: pk_type_t) -> *const pk_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_init"]
+    #[link_name = "mbedtls_pk_init"]
     pub fn pk_init(ctx: *mut pk_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_free"]
+    #[link_name = "mbedtls_pk_free"]
     pub fn pk_free(ctx: *mut pk_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_setup"]
+    #[link_name = "mbedtls_pk_setup"]
     pub fn pk_setup(ctx: *mut pk_context, info: *const pk_info_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_setup_rsa_alt"]
+    #[link_name = "mbedtls_pk_setup_rsa_alt"]
     pub fn pk_setup_rsa_alt(
         ctx: *mut pk_context,
         key: *mut raw_types::c_void,
@@ -8536,15 +8536,15 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_get_bitlen"]
+    #[link_name = "mbedtls_pk_get_bitlen"]
     pub fn pk_get_bitlen(ctx: *const pk_context) -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_can_do"]
+    #[link_name = "mbedtls_pk_can_do"]
     pub fn pk_can_do(ctx: *const pk_context, type_: pk_type_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_verify"]
+    #[link_name = "mbedtls_pk_verify"]
     pub fn pk_verify(
         ctx: *mut pk_context,
         md_alg: md_type_t,
@@ -8555,7 +8555,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_verify_restartable"]
+    #[link_name = "mbedtls_pk_verify_restartable"]
     pub fn pk_verify_restartable(
         ctx: *mut pk_context,
         md_alg: md_type_t,
@@ -8567,7 +8567,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_verify_ext"]
+    #[link_name = "mbedtls_pk_verify_ext"]
     pub fn pk_verify_ext(
         type_: pk_type_t,
         options: *const raw_types::c_void,
@@ -8580,7 +8580,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_sign"]
+    #[link_name = "mbedtls_pk_sign"]
     pub fn pk_sign(
         ctx: *mut pk_context,
         md_alg: md_type_t,
@@ -8599,7 +8599,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_sign_restartable"]
+    #[link_name = "mbedtls_pk_sign_restartable"]
     pub fn pk_sign_restartable(
         ctx: *mut pk_context,
         md_alg: md_type_t,
@@ -8619,7 +8619,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_decrypt"]
+    #[link_name = "mbedtls_pk_decrypt"]
     pub fn pk_decrypt(
         ctx: *mut pk_context,
         input: *const raw_types::c_uchar,
@@ -8638,7 +8638,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_encrypt"]
+    #[link_name = "mbedtls_pk_encrypt"]
     pub fn pk_encrypt(
         ctx: *mut pk_context,
         input: *const raw_types::c_uchar,
@@ -8657,23 +8657,23 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_check_pair"]
+    #[link_name = "mbedtls_pk_check_pair"]
     pub fn pk_check_pair(pub_: *const pk_context, prv: *const pk_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_debug"]
+    #[link_name = "mbedtls_pk_debug"]
     pub fn pk_debug(ctx: *const pk_context, items: *mut pk_debug_item) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_get_name"]
+    #[link_name = "mbedtls_pk_get_name"]
     pub fn pk_get_name(ctx: *const pk_context) -> *const raw_types::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_get_type"]
+    #[link_name = "mbedtls_pk_get_type"]
     pub fn pk_get_type(ctx: *const pk_context) -> pk_type_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_parse_key"]
+    #[link_name = "mbedtls_pk_parse_key"]
     pub fn pk_parse_key(
         ctx: *mut pk_context,
         key: *const raw_types::c_uchar,
@@ -8683,7 +8683,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_parse_public_key"]
+    #[link_name = "mbedtls_pk_parse_public_key"]
     pub fn pk_parse_public_key(
         ctx: *mut pk_context,
         key: *const raw_types::c_uchar,
@@ -8691,7 +8691,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_parse_keyfile"]
+    #[link_name = "mbedtls_pk_parse_keyfile"]
     pub fn pk_parse_keyfile(
         ctx: *mut pk_context,
         path: *const raw_types::c_char,
@@ -8699,14 +8699,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_parse_public_keyfile"]
+    #[link_name = "mbedtls_pk_parse_public_keyfile"]
     pub fn pk_parse_public_keyfile(
         ctx: *mut pk_context,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_write_key_der"]
+    #[link_name = "mbedtls_pk_write_key_der"]
     pub fn pk_write_key_der(
         ctx: *mut pk_context,
         buf: *mut raw_types::c_uchar,
@@ -8714,7 +8714,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_write_pubkey_der"]
+    #[link_name = "mbedtls_pk_write_pubkey_der"]
     pub fn pk_write_pubkey_der(
         ctx: *mut pk_context,
         buf: *mut raw_types::c_uchar,
@@ -8722,7 +8722,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_write_pubkey_pem"]
+    #[link_name = "mbedtls_pk_write_pubkey_pem"]
     pub fn pk_write_pubkey_pem(
         ctx: *mut pk_context,
         buf: *mut raw_types::c_uchar,
@@ -8730,7 +8730,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_write_key_pem"]
+    #[link_name = "mbedtls_pk_write_key_pem"]
     pub fn pk_write_key_pem(
         ctx: *mut pk_context,
         buf: *mut raw_types::c_uchar,
@@ -8738,7 +8738,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_parse_subpubkey"]
+    #[link_name = "mbedtls_pk_parse_subpubkey"]
     pub fn pk_parse_subpubkey(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8746,7 +8746,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_write_pubkey"]
+    #[link_name = "mbedtls_pk_write_pubkey"]
     pub fn pk_write_pubkey(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -8754,7 +8754,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pk_load_file"]
+    #[link_name = "mbedtls_pk_load_file"]
     pub fn pk_load_file(
         path: *const raw_types::c_char,
         buf: *mut *mut raw_types::c_uchar,
@@ -8849,7 +8849,7 @@ fn bindgen_test_layout_x509_time() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_dn_gets"]
+    #[link_name = "mbedtls_x509_dn_gets"]
     pub fn x509_dn_gets(
         buf: *mut raw_types::c_char,
         size: usize,
@@ -8857,7 +8857,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_serial_gets"]
+    #[link_name = "mbedtls_x509_serial_gets"]
     pub fn x509_serial_gets(
         buf: *mut raw_types::c_char,
         size: usize,
@@ -8865,19 +8865,19 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_time_is_past"]
+    #[link_name = "mbedtls_x509_time_is_past"]
     pub fn x509_time_is_past(to: *const x509_time) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_time_is_future"]
+    #[link_name = "mbedtls_x509_time_is_future"]
     pub fn x509_time_is_future(from: *const x509_time) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_self_test"]
+    #[link_name = "mbedtls_x509_self_test"]
     pub fn x509_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_name"]
+    #[link_name = "mbedtls_x509_get_name"]
     pub fn x509_get_name(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8885,7 +8885,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_alg_null"]
+    #[link_name = "mbedtls_x509_get_alg_null"]
     pub fn x509_get_alg_null(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8893,7 +8893,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_alg"]
+    #[link_name = "mbedtls_x509_get_alg"]
     pub fn x509_get_alg(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8902,7 +8902,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_rsassa_pss_params"]
+    #[link_name = "mbedtls_x509_get_rsassa_pss_params"]
     pub fn x509_get_rsassa_pss_params(
         params: *const x509_buf,
         md_alg: *mut md_type_t,
@@ -8911,7 +8911,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_sig"]
+    #[link_name = "mbedtls_x509_get_sig"]
     pub fn x509_get_sig(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8919,7 +8919,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_sig_alg"]
+    #[link_name = "mbedtls_x509_get_sig_alg"]
     pub fn x509_get_sig_alg(
         sig_oid: *const x509_buf,
         sig_params: *const x509_buf,
@@ -8929,7 +8929,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_time"]
+    #[link_name = "mbedtls_x509_get_time"]
     pub fn x509_get_time(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8937,7 +8937,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_serial"]
+    #[link_name = "mbedtls_x509_get_serial"]
     pub fn x509_get_serial(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8945,7 +8945,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_get_ext"]
+    #[link_name = "mbedtls_x509_get_ext"]
     pub fn x509_get_ext(
         p: *mut *mut raw_types::c_uchar,
         end: *const raw_types::c_uchar,
@@ -8954,7 +8954,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_sig_alg_gets"]
+    #[link_name = "mbedtls_x509_sig_alg_gets"]
     pub fn x509_sig_alg_gets(
         buf: *mut raw_types::c_char,
         size: usize,
@@ -8965,7 +8965,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_key_size_helper"]
+    #[link_name = "mbedtls_x509_key_size_helper"]
     pub fn x509_key_size_helper(
         buf: *mut raw_types::c_char,
         buf_size: usize,
@@ -8973,14 +8973,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_string_to_names"]
+    #[link_name = "mbedtls_x509_string_to_names"]
     pub fn x509_string_to_names(
         head: *mut *mut asn1_named_data,
         name: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_set_extension"]
+    #[link_name = "mbedtls_x509_set_extension"]
     pub fn x509_set_extension(
         head: *mut *mut asn1_named_data,
         oid: *const raw_types::c_char,
@@ -8991,7 +8991,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_write_extensions"]
+    #[link_name = "mbedtls_x509_write_extensions"]
     pub fn x509_write_extensions(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -8999,7 +8999,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_write_names"]
+    #[link_name = "mbedtls_x509_write_names"]
     pub fn x509_write_names(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -9007,7 +9007,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_write_sig"]
+    #[link_name = "mbedtls_x509_write_sig"]
     pub fn x509_write_sig(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -9019,11 +9019,11 @@ extern "C" {
 }
 pub type mbedtls_time_t = time_t;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_platform_zeroize"]
+    #[link_name = "mbedtls_platform_zeroize"]
     pub fn platform_zeroize(buf: *mut raw_types::c_void, len: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_platform_gmtime_r"]
+    #[link_name = "mbedtls_platform_gmtime_r"]
     pub fn platform_gmtime_r(tt: *const mbedtls_time_t, tm_buf: *mut tm) -> *mut tm;
 }
 pub const CIPHER_ID_NONE: cipher_id_t = 0;
@@ -9384,19 +9384,19 @@ fn bindgen_test_layout_cipher_context_t() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_list"]
+    #[link_name = "mbedtls_cipher_list"]
     pub fn cipher_list() -> *const raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_info_from_string"]
+    #[link_name = "mbedtls_cipher_info_from_string"]
     pub fn cipher_info_from_string(cipher_name: *const raw_types::c_char) -> *const cipher_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_info_from_type"]
+    #[link_name = "mbedtls_cipher_info_from_type"]
     pub fn cipher_info_from_type(cipher_type: cipher_type_t) -> *const cipher_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_info_from_values"]
+    #[link_name = "mbedtls_cipher_info_from_values"]
     pub fn cipher_info_from_values(
         cipher_id: cipher_id_t,
         key_bitlen: raw_types::c_int,
@@ -9404,22 +9404,22 @@ extern "C" {
     ) -> *const cipher_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_init"]
+    #[link_name = "mbedtls_cipher_init"]
     pub fn cipher_init(ctx: *mut cipher_context_t);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_free"]
+    #[link_name = "mbedtls_cipher_free"]
     pub fn cipher_free(ctx: *mut cipher_context_t);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_setup"]
+    #[link_name = "mbedtls_cipher_setup"]
     pub fn cipher_setup(
         ctx: *mut cipher_context_t,
         cipher_info: *const cipher_info_t,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_setkey"]
+    #[link_name = "mbedtls_cipher_setkey"]
     pub fn cipher_setkey(
         ctx: *mut cipher_context_t,
         key: *const raw_types::c_uchar,
@@ -9428,14 +9428,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_set_padding_mode"]
+    #[link_name = "mbedtls_cipher_set_padding_mode"]
     pub fn cipher_set_padding_mode(
         ctx: *mut cipher_context_t,
         mode: cipher_padding_t,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_set_iv"]
+    #[link_name = "mbedtls_cipher_set_iv"]
     pub fn cipher_set_iv(
         ctx: *mut cipher_context_t,
         iv: *const raw_types::c_uchar,
@@ -9443,11 +9443,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_reset"]
+    #[link_name = "mbedtls_cipher_reset"]
     pub fn cipher_reset(ctx: *mut cipher_context_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_update_ad"]
+    #[link_name = "mbedtls_cipher_update_ad"]
     pub fn cipher_update_ad(
         ctx: *mut cipher_context_t,
         ad: *const raw_types::c_uchar,
@@ -9455,7 +9455,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_update"]
+    #[link_name = "mbedtls_cipher_update"]
     pub fn cipher_update(
         ctx: *mut cipher_context_t,
         input: *const raw_types::c_uchar,
@@ -9465,7 +9465,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_finish"]
+    #[link_name = "mbedtls_cipher_finish"]
     pub fn cipher_finish(
         ctx: *mut cipher_context_t,
         output: *mut raw_types::c_uchar,
@@ -9473,7 +9473,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_write_tag"]
+    #[link_name = "mbedtls_cipher_write_tag"]
     pub fn cipher_write_tag(
         ctx: *mut cipher_context_t,
         tag: *mut raw_types::c_uchar,
@@ -9481,7 +9481,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_check_tag"]
+    #[link_name = "mbedtls_cipher_check_tag"]
     pub fn cipher_check_tag(
         ctx: *mut cipher_context_t,
         tag: *const raw_types::c_uchar,
@@ -9489,7 +9489,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_crypt"]
+    #[link_name = "mbedtls_cipher_crypt"]
     pub fn cipher_crypt(
         ctx: *mut cipher_context_t,
         iv: *const raw_types::c_uchar,
@@ -9501,7 +9501,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_auth_encrypt"]
+    #[link_name = "mbedtls_cipher_auth_encrypt"]
     pub fn cipher_auth_encrypt(
         ctx: *mut cipher_context_t,
         iv: *const raw_types::c_uchar,
@@ -9517,7 +9517,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_auth_decrypt"]
+    #[link_name = "mbedtls_cipher_auth_decrypt"]
     pub fn cipher_auth_decrypt(
         ctx: *mut cipher_context_t,
         iv: *const raw_types::c_uchar,
@@ -9798,7 +9798,7 @@ fn bindgen_test_layout_x509_crl() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crl_parse_der"]
+    #[link_name = "mbedtls_x509_crl_parse_der"]
     pub fn x509_crl_parse_der(
         chain: *mut x509_crl,
         buf: *const raw_types::c_uchar,
@@ -9806,7 +9806,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crl_parse"]
+    #[link_name = "mbedtls_x509_crl_parse"]
     pub fn x509_crl_parse(
         chain: *mut x509_crl,
         buf: *const raw_types::c_uchar,
@@ -9814,14 +9814,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crl_parse_file"]
+    #[link_name = "mbedtls_x509_crl_parse_file"]
     pub fn x509_crl_parse_file(
         chain: *mut x509_crl,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crl_info"]
+    #[link_name = "mbedtls_x509_crl_info"]
     pub fn x509_crl_info(
         buf: *mut raw_types::c_char,
         size: usize,
@@ -9830,11 +9830,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crl_init"]
+    #[link_name = "mbedtls_x509_crl_init"]
     pub fn x509_crl_init(crl: *mut x509_crl);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crl_free"]
+    #[link_name = "mbedtls_x509_crl_free"]
     pub fn x509_crl_free(crl: *mut x509_crl);
 }
 pub const KEY_EXCHANGE_NONE: key_exchange_type_t = 0;
@@ -9986,33 +9986,33 @@ fn bindgen_test_layout_ssl_ciphersuite_t() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_list_ciphersuites"]
+    #[link_name = "mbedtls_ssl_list_ciphersuites"]
     pub fn ssl_list_ciphersuites() -> *const raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ciphersuite_from_string"]
+    #[link_name = "mbedtls_ssl_ciphersuite_from_string"]
     pub fn ssl_ciphersuite_from_string(
         ciphersuite_name: *const raw_types::c_char,
     ) -> *const ssl_ciphersuite_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ciphersuite_from_id"]
+    #[link_name = "mbedtls_ssl_ciphersuite_from_id"]
     pub fn ssl_ciphersuite_from_id(ciphersuite_id: raw_types::c_int) -> *const ssl_ciphersuite_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_ciphersuite_sig_pk_alg"]
+    #[link_name = "mbedtls_ssl_get_ciphersuite_sig_pk_alg"]
     pub fn ssl_get_ciphersuite_sig_pk_alg(info: *const ssl_ciphersuite_t) -> pk_type_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_ciphersuite_sig_alg"]
+    #[link_name = "mbedtls_ssl_get_ciphersuite_sig_alg"]
     pub fn ssl_get_ciphersuite_sig_alg(info: *const ssl_ciphersuite_t) -> pk_type_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ciphersuite_uses_ec"]
+    #[link_name = "mbedtls_ssl_ciphersuite_uses_ec"]
     pub fn ssl_ciphersuite_uses_ec(info: *const ssl_ciphersuite_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ciphersuite_uses_psk"]
+    #[link_name = "mbedtls_ssl_ciphersuite_uses_psk"]
     pub fn ssl_ciphersuite_uses_psk(info: *const ssl_ciphersuite_t) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -10603,19 +10603,19 @@ fn bindgen_test_layout_x509_crt_verify_chain() {
 }
 pub type x509_crt_restart_ctx = raw_types::c_void;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_profile_default"]
+    #[link_name = "mbedtls_x509_crt_profile_default"]
     pub static x509_crt_profile_default: x509_crt_profile;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_profile_next"]
+    #[link_name = "mbedtls_x509_crt_profile_next"]
     pub static x509_crt_profile_next: x509_crt_profile;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_profile_suiteb"]
+    #[link_name = "mbedtls_x509_crt_profile_suiteb"]
     pub static x509_crt_profile_suiteb: x509_crt_profile;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_parse_der"]
+    #[link_name = "mbedtls_x509_crt_parse_der"]
     pub fn x509_crt_parse_der(
         chain: *mut x509_crt,
         buf: *const raw_types::c_uchar,
@@ -10623,7 +10623,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_parse"]
+    #[link_name = "mbedtls_x509_crt_parse"]
     pub fn x509_crt_parse(
         chain: *mut x509_crt,
         buf: *const raw_types::c_uchar,
@@ -10631,21 +10631,21 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_parse_file"]
+    #[link_name = "mbedtls_x509_crt_parse_file"]
     pub fn x509_crt_parse_file(
         chain: *mut x509_crt,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_parse_path"]
+    #[link_name = "mbedtls_x509_crt_parse_path"]
     pub fn x509_crt_parse_path(
         chain: *mut x509_crt,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_info"]
+    #[link_name = "mbedtls_x509_crt_info"]
     pub fn x509_crt_info(
         buf: *mut raw_types::c_char,
         size: usize,
@@ -10654,7 +10654,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_verify_info"]
+    #[link_name = "mbedtls_x509_crt_verify_info"]
     pub fn x509_crt_verify_info(
         buf: *mut raw_types::c_char,
         size: usize,
@@ -10663,7 +10663,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_verify"]
+    #[link_name = "mbedtls_x509_crt_verify"]
     pub fn x509_crt_verify(
         crt: *mut x509_crt,
         trust_ca: *mut x509_crt,
@@ -10682,7 +10682,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_verify_with_profile"]
+    #[link_name = "mbedtls_x509_crt_verify_with_profile"]
     pub fn x509_crt_verify_with_profile(
         crt: *mut x509_crt,
         trust_ca: *mut x509_crt,
@@ -10702,7 +10702,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_verify_restartable"]
+    #[link_name = "mbedtls_x509_crt_verify_restartable"]
     pub fn x509_crt_verify_restartable(
         crt: *mut x509_crt,
         trust_ca: *mut x509_crt,
@@ -10723,14 +10723,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_check_key_usage"]
+    #[link_name = "mbedtls_x509_crt_check_key_usage"]
     pub fn x509_crt_check_key_usage(
         crt: *const x509_crt,
         usage: raw_types::c_uint,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_check_extended_key_usage"]
+    #[link_name = "mbedtls_x509_crt_check_extended_key_usage"]
     pub fn x509_crt_check_extended_key_usage(
         crt: *const x509_crt,
         usage_oid: *const raw_types::c_char,
@@ -10738,34 +10738,34 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_is_revoked"]
+    #[link_name = "mbedtls_x509_crt_is_revoked"]
     pub fn x509_crt_is_revoked(crt: *const x509_crt, crl: *const x509_crl) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_init"]
+    #[link_name = "mbedtls_x509_crt_init"]
     pub fn x509_crt_init(crt: *mut x509_crt);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_crt_free"]
+    #[link_name = "mbedtls_x509_crt_free"]
     pub fn x509_crt_free(crt: *mut x509_crt);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_init"]
+    #[link_name = "mbedtls_x509write_crt_init"]
     pub fn x509write_crt_init(ctx: *mut x509write_cert);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_version"]
+    #[link_name = "mbedtls_x509write_crt_set_version"]
     pub fn x509write_crt_set_version(ctx: *mut x509write_cert, version: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_serial"]
+    #[link_name = "mbedtls_x509write_crt_set_serial"]
     pub fn x509write_crt_set_serial(
         ctx: *mut x509write_cert,
         serial: *const mpi,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_validity"]
+    #[link_name = "mbedtls_x509write_crt_set_validity"]
     pub fn x509write_crt_set_validity(
         ctx: *mut x509write_cert,
         not_before: *const raw_types::c_char,
@@ -10773,33 +10773,33 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_issuer_name"]
+    #[link_name = "mbedtls_x509write_crt_set_issuer_name"]
     pub fn x509write_crt_set_issuer_name(
         ctx: *mut x509write_cert,
         issuer_name: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_subject_name"]
+    #[link_name = "mbedtls_x509write_crt_set_subject_name"]
     pub fn x509write_crt_set_subject_name(
         ctx: *mut x509write_cert,
         subject_name: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_subject_key"]
+    #[link_name = "mbedtls_x509write_crt_set_subject_key"]
     pub fn x509write_crt_set_subject_key(ctx: *mut x509write_cert, key: *mut pk_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_issuer_key"]
+    #[link_name = "mbedtls_x509write_crt_set_issuer_key"]
     pub fn x509write_crt_set_issuer_key(ctx: *mut x509write_cert, key: *mut pk_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_md_alg"]
+    #[link_name = "mbedtls_x509write_crt_set_md_alg"]
     pub fn x509write_crt_set_md_alg(ctx: *mut x509write_cert, md_alg: md_type_t);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_extension"]
+    #[link_name = "mbedtls_x509write_crt_set_extension"]
     pub fn x509write_crt_set_extension(
         ctx: *mut x509write_cert,
         oid: *const raw_types::c_char,
@@ -10810,7 +10810,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_basic_constraints"]
+    #[link_name = "mbedtls_x509write_crt_set_basic_constraints"]
     pub fn x509write_crt_set_basic_constraints(
         ctx: *mut x509write_cert,
         is_ca: raw_types::c_int,
@@ -10818,34 +10818,34 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_subject_key_identifier"]
+    #[link_name = "mbedtls_x509write_crt_set_subject_key_identifier"]
     pub fn x509write_crt_set_subject_key_identifier(ctx: *mut x509write_cert) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_authority_key_identifier"]
+    #[link_name = "mbedtls_x509write_crt_set_authority_key_identifier"]
     pub fn x509write_crt_set_authority_key_identifier(ctx: *mut x509write_cert)
         -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_key_usage"]
+    #[link_name = "mbedtls_x509write_crt_set_key_usage"]
     pub fn x509write_crt_set_key_usage(
         ctx: *mut x509write_cert,
         key_usage: raw_types::c_uint,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_set_ns_cert_type"]
+    #[link_name = "mbedtls_x509write_crt_set_ns_cert_type"]
     pub fn x509write_crt_set_ns_cert_type(
         ctx: *mut x509write_cert,
         ns_cert_type: raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_free"]
+    #[link_name = "mbedtls_x509write_crt_free"]
     pub fn x509write_crt_free(ctx: *mut x509write_cert);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_der"]
+    #[link_name = "mbedtls_x509write_crt_der"]
     pub fn x509write_crt_der(
         ctx: *mut x509write_cert,
         buf: *mut raw_types::c_uchar,
@@ -10861,7 +10861,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_crt_pem"]
+    #[link_name = "mbedtls_x509write_crt_pem"]
     pub fn x509write_crt_pem(
         ctx: *mut x509write_cert,
         buf: *mut raw_types::c_uchar,
@@ -11015,11 +11015,11 @@ fn bindgen_test_layout_dhm_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_init"]
+    #[link_name = "mbedtls_dhm_init"]
     pub fn dhm_init(ctx: *mut dhm_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_read_params"]
+    #[link_name = "mbedtls_dhm_read_params"]
     pub fn dhm_read_params(
         ctx: *mut dhm_context,
         p: *mut *mut raw_types::c_uchar,
@@ -11027,7 +11027,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_make_params"]
+    #[link_name = "mbedtls_dhm_make_params"]
     pub fn dhm_make_params(
         ctx: *mut dhm_context,
         x_size: raw_types::c_int,
@@ -11044,11 +11044,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_set_group"]
+    #[link_name = "mbedtls_dhm_set_group"]
     pub fn dhm_set_group(ctx: *mut dhm_context, P: *const mpi, G: *const mpi) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_read_public"]
+    #[link_name = "mbedtls_dhm_read_public"]
     pub fn dhm_read_public(
         ctx: *mut dhm_context,
         input: *const raw_types::c_uchar,
@@ -11056,7 +11056,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_make_public"]
+    #[link_name = "mbedtls_dhm_make_public"]
     pub fn dhm_make_public(
         ctx: *mut dhm_context,
         x_size: raw_types::c_int,
@@ -11073,7 +11073,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_calc_secret"]
+    #[link_name = "mbedtls_dhm_calc_secret"]
     pub fn dhm_calc_secret(
         ctx: *mut dhm_context,
         output: *mut raw_types::c_uchar,
@@ -11090,11 +11090,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_free"]
+    #[link_name = "mbedtls_dhm_free"]
     pub fn dhm_free(ctx: *mut dhm_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_parse_dhm"]
+    #[link_name = "mbedtls_dhm_parse_dhm"]
     pub fn dhm_parse_dhm(
         dhm: *mut dhm_context,
         dhmin: *const raw_types::c_uchar,
@@ -11102,14 +11102,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_parse_dhmfile"]
+    #[link_name = "mbedtls_dhm_parse_dhmfile"]
     pub fn dhm_parse_dhmfile(
         dhm: *mut dhm_context,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_dhm_self_test"]
+    #[link_name = "mbedtls_dhm_self_test"]
     pub fn dhm_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 pub const ECDH_OURS: ecdh_side = 0;
@@ -11232,7 +11232,7 @@ fn bindgen_test_layout_ecdh_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_gen_public"]
+    #[link_name = "mbedtls_ecdh_gen_public"]
     pub fn ecdh_gen_public(
         grp: *mut ecp_group,
         d: *mut mpi,
@@ -11248,7 +11248,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_compute_shared"]
+    #[link_name = "mbedtls_ecdh_compute_shared"]
     pub fn ecdh_compute_shared(
         grp: *mut ecp_group,
         z: *mut mpi,
@@ -11265,19 +11265,19 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_init"]
+    #[link_name = "mbedtls_ecdh_init"]
     pub fn ecdh_init(ctx: *mut ecdh_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_setup"]
+    #[link_name = "mbedtls_ecdh_setup"]
     pub fn ecdh_setup(ctx: *mut ecdh_context, grp_id: ecp_group_id) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_free"]
+    #[link_name = "mbedtls_ecdh_free"]
     pub fn ecdh_free(ctx: *mut ecdh_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_make_params"]
+    #[link_name = "mbedtls_ecdh_make_params"]
     pub fn ecdh_make_params(
         ctx: *mut ecdh_context,
         olen: *mut usize,
@@ -11294,7 +11294,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_read_params"]
+    #[link_name = "mbedtls_ecdh_read_params"]
     pub fn ecdh_read_params(
         ctx: *mut ecdh_context,
         buf: *mut *const raw_types::c_uchar,
@@ -11302,7 +11302,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_get_params"]
+    #[link_name = "mbedtls_ecdh_get_params"]
     pub fn ecdh_get_params(
         ctx: *mut ecdh_context,
         key: *const ecp_keypair,
@@ -11310,7 +11310,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_make_public"]
+    #[link_name = "mbedtls_ecdh_make_public"]
     pub fn ecdh_make_public(
         ctx: *mut ecdh_context,
         olen: *mut usize,
@@ -11327,7 +11327,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_read_public"]
+    #[link_name = "mbedtls_ecdh_read_public"]
     pub fn ecdh_read_public(
         ctx: *mut ecdh_context,
         buf: *const raw_types::c_uchar,
@@ -11335,7 +11335,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdh_calc_secret"]
+    #[link_name = "mbedtls_ecdh_calc_secret"]
     pub fn ecdh_calc_secret(
         ctx: *mut ecdh_context,
         olen: *mut usize,
@@ -11468,7 +11468,7 @@ extern "C" {
     pub fn dup2(__fd: raw_types::c_int, __fd2: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}__environ"]
+    #[link_name = "__environ"]
     pub static mut __environ: *mut *mut raw_types::c_char;
 }
 extern "C" {
@@ -11996,19 +11996,19 @@ extern "C" {
     pub fn setlogin(__name: *const raw_types::c_char) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}optarg"]
+    #[link_name = "optarg"]
     pub static mut optarg: *mut raw_types::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}optind"]
+    #[link_name = "optind"]
     pub static mut optind: raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}opterr"]
+    #[link_name = "opterr"]
     pub static mut opterr: raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}optopt"]
+    #[link_name = "optopt"]
     pub static mut optopt: raw_types::c_int;
 }
 extern "C" {
@@ -14774,39 +14774,39 @@ fn bindgen_test_layout_ssl_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_ciphersuite_name"]
+    #[link_name = "mbedtls_ssl_get_ciphersuite_name"]
     pub fn ssl_get_ciphersuite_name(ciphersuite_id: raw_types::c_int) -> *const raw_types::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_ciphersuite_id"]
+    #[link_name = "mbedtls_ssl_get_ciphersuite_id"]
     pub fn ssl_get_ciphersuite_id(ciphersuite_name: *const raw_types::c_char) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_init"]
+    #[link_name = "mbedtls_ssl_init"]
     pub fn ssl_init(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_setup"]
+    #[link_name = "mbedtls_ssl_setup"]
     pub fn ssl_setup(ssl: *mut ssl_context, conf: *const ssl_config) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_session_reset"]
+    #[link_name = "mbedtls_ssl_session_reset"]
     pub fn ssl_session_reset(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_endpoint"]
+    #[link_name = "mbedtls_ssl_conf_endpoint"]
     pub fn ssl_conf_endpoint(conf: *mut ssl_config, endpoint: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_transport"]
+    #[link_name = "mbedtls_ssl_conf_transport"]
     pub fn ssl_conf_transport(conf: *mut ssl_config, transport: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_authmode"]
+    #[link_name = "mbedtls_ssl_conf_authmode"]
     pub fn ssl_conf_authmode(conf: *mut ssl_config, authmode: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_verify"]
+    #[link_name = "mbedtls_ssl_conf_verify"]
     pub fn ssl_conf_verify(
         conf: *mut ssl_config,
         f_vrfy: ::core::option::Option<
@@ -14821,7 +14821,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_rng"]
+    #[link_name = "mbedtls_ssl_conf_rng"]
     pub fn ssl_conf_rng(
         conf: *mut ssl_config,
         f_rng: ::core::option::Option<
@@ -14835,7 +14835,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_dbg"]
+    #[link_name = "mbedtls_ssl_conf_dbg"]
     pub fn ssl_conf_dbg(
         conf: *mut ssl_config,
         f_dbg: ::core::option::Option<
@@ -14851,7 +14851,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_bio"]
+    #[link_name = "mbedtls_ssl_set_bio"]
     pub fn ssl_set_bio(
         ssl: *mut ssl_context,
         p_bio: *mut raw_types::c_void,
@@ -14861,15 +14861,15 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_mtu"]
+    #[link_name = "mbedtls_ssl_set_mtu"]
     pub fn ssl_set_mtu(ssl: *mut ssl_context, mtu: u16);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_read_timeout"]
+    #[link_name = "mbedtls_ssl_conf_read_timeout"]
     pub fn ssl_conf_read_timeout(conf: *mut ssl_config, timeout: u32);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_timer_cb"]
+    #[link_name = "mbedtls_ssl_set_timer_cb"]
     pub fn ssl_set_timer_cb(
         ssl: *mut ssl_context,
         p_timer: *mut raw_types::c_void,
@@ -14906,7 +14906,7 @@ pub type ssl_ticket_parse_t = ::core::option::Option<
     ) -> raw_types::c_int,
 >;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_session_tickets_cb"]
+    #[link_name = "mbedtls_ssl_conf_session_tickets_cb"]
     pub fn ssl_conf_session_tickets_cb(
         conf: *mut ssl_config,
         f_ticket_write: ssl_ticket_write_t,
@@ -14915,7 +14915,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_export_keys_cb"]
+    #[link_name = "mbedtls_ssl_conf_export_keys_cb"]
     pub fn ssl_conf_export_keys_cb(
         conf: *mut ssl_config,
         f_export_keys: ssl_export_keys_t,
@@ -14941,7 +14941,7 @@ pub type ssl_cookie_check_t = ::core::option::Option<
     ) -> raw_types::c_int,
 >;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_dtls_cookies"]
+    #[link_name = "mbedtls_ssl_conf_dtls_cookies"]
     pub fn ssl_conf_dtls_cookies(
         conf: *mut ssl_config,
         f_cookie_write: ssl_cookie_write_t,
@@ -14950,7 +14950,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_client_transport_id"]
+    #[link_name = "mbedtls_ssl_set_client_transport_id"]
     pub fn ssl_set_client_transport_id(
         ssl: *mut ssl_context,
         info: *const raw_types::c_uchar,
@@ -14958,23 +14958,23 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_dtls_anti_replay"]
+    #[link_name = "mbedtls_ssl_conf_dtls_anti_replay"]
     pub fn ssl_conf_dtls_anti_replay(conf: *mut ssl_config, mode: raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_dtls_badmac_limit"]
+    #[link_name = "mbedtls_ssl_conf_dtls_badmac_limit"]
     pub fn ssl_conf_dtls_badmac_limit(conf: *mut ssl_config, limit: raw_types::c_uint);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_datagram_packing"]
+    #[link_name = "mbedtls_ssl_set_datagram_packing"]
     pub fn ssl_set_datagram_packing(ssl: *mut ssl_context, allow_packing: raw_types::c_uint);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_handshake_timeout"]
+    #[link_name = "mbedtls_ssl_conf_handshake_timeout"]
     pub fn ssl_conf_handshake_timeout(conf: *mut ssl_config, min: u32, max: u32);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_session_cache"]
+    #[link_name = "mbedtls_ssl_conf_session_cache"]
     pub fn ssl_conf_session_cache(
         conf: *mut ssl_config,
         p_cache: *mut raw_types::c_void,
@@ -14993,15 +14993,15 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_session"]
+    #[link_name = "mbedtls_ssl_set_session"]
     pub fn ssl_set_session(ssl: *mut ssl_context, session: *const ssl_session) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_ciphersuites"]
+    #[link_name = "mbedtls_ssl_conf_ciphersuites"]
     pub fn ssl_conf_ciphersuites(conf: *mut ssl_config, ciphersuites: *const raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_ciphersuites_for_version"]
+    #[link_name = "mbedtls_ssl_conf_ciphersuites_for_version"]
     pub fn ssl_conf_ciphersuites_for_version(
         conf: *mut ssl_config,
         ciphersuites: *const raw_types::c_int,
@@ -15010,15 +15010,15 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_cert_profile"]
+    #[link_name = "mbedtls_ssl_conf_cert_profile"]
     pub fn ssl_conf_cert_profile(conf: *mut ssl_config, profile: *const x509_crt_profile);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_ca_chain"]
+    #[link_name = "mbedtls_ssl_conf_ca_chain"]
     pub fn ssl_conf_ca_chain(conf: *mut ssl_config, ca_chain: *mut x509_crt, ca_crl: *mut x509_crl);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_own_cert"]
+    #[link_name = "mbedtls_ssl_conf_own_cert"]
     pub fn ssl_conf_own_cert(
         conf: *mut ssl_config,
         own_cert: *mut x509_crt,
@@ -15026,7 +15026,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_psk"]
+    #[link_name = "mbedtls_ssl_conf_psk"]
     pub fn ssl_conf_psk(
         conf: *mut ssl_config,
         psk: *const raw_types::c_uchar,
@@ -15036,7 +15036,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_hs_psk"]
+    #[link_name = "mbedtls_ssl_set_hs_psk"]
     pub fn ssl_set_hs_psk(
         ssl: *mut ssl_context,
         psk: *const raw_types::c_uchar,
@@ -15044,7 +15044,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_psk_cb"]
+    #[link_name = "mbedtls_ssl_conf_psk_cb"]
     pub fn ssl_conf_psk_cb(
         conf: *mut ssl_config,
         f_psk: ::core::option::Option<
@@ -15059,7 +15059,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_dh_param"]
+    #[link_name = "mbedtls_ssl_conf_dh_param"]
     pub fn ssl_conf_dh_param(
         conf: *mut ssl_config,
         dhm_P: *const raw_types::c_char,
@@ -15067,7 +15067,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_dh_param_bin"]
+    #[link_name = "mbedtls_ssl_conf_dh_param_bin"]
     pub fn ssl_conf_dh_param_bin(
         conf: *mut ssl_config,
         dhm_P: *const raw_types::c_uchar,
@@ -15077,33 +15077,33 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_dh_param_ctx"]
+    #[link_name = "mbedtls_ssl_conf_dh_param_ctx"]
     pub fn ssl_conf_dh_param_ctx(
         conf: *mut ssl_config,
         dhm_ctx: *mut dhm_context,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_dhm_min_bitlen"]
+    #[link_name = "mbedtls_ssl_conf_dhm_min_bitlen"]
     pub fn ssl_conf_dhm_min_bitlen(conf: *mut ssl_config, bitlen: raw_types::c_uint);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_curves"]
+    #[link_name = "mbedtls_ssl_conf_curves"]
     pub fn ssl_conf_curves(conf: *mut ssl_config, curves: *const ecp_group_id);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_sig_hashes"]
+    #[link_name = "mbedtls_ssl_conf_sig_hashes"]
     pub fn ssl_conf_sig_hashes(conf: *mut ssl_config, hashes: *const raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_hostname"]
+    #[link_name = "mbedtls_ssl_set_hostname"]
     pub fn ssl_set_hostname(
         ssl: *mut ssl_context,
         hostname: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_hs_own_cert"]
+    #[link_name = "mbedtls_ssl_set_hs_own_cert"]
     pub fn ssl_set_hs_own_cert(
         ssl: *mut ssl_context,
         own_cert: *mut x509_crt,
@@ -15111,7 +15111,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_hs_ca_chain"]
+    #[link_name = "mbedtls_ssl_set_hs_ca_chain"]
     pub fn ssl_set_hs_ca_chain(
         ssl: *mut ssl_context,
         ca_chain: *mut x509_crt,
@@ -15119,11 +15119,11 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_hs_authmode"]
+    #[link_name = "mbedtls_ssl_set_hs_authmode"]
     pub fn ssl_set_hs_authmode(ssl: *mut ssl_context, authmode: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_sni"]
+    #[link_name = "mbedtls_ssl_conf_sni"]
     pub fn ssl_conf_sni(
         conf: *mut ssl_config,
         f_sni: ::core::option::Option<
@@ -15138,18 +15138,18 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_alpn_protocols"]
+    #[link_name = "mbedtls_ssl_conf_alpn_protocols"]
     pub fn ssl_conf_alpn_protocols(
         conf: *mut ssl_config,
         protos: *mut *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_alpn_protocol"]
+    #[link_name = "mbedtls_ssl_get_alpn_protocol"]
     pub fn ssl_get_alpn_protocol(ssl: *const ssl_context) -> *const raw_types::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_max_version"]
+    #[link_name = "mbedtls_ssl_conf_max_version"]
     pub fn ssl_conf_max_version(
         conf: *mut ssl_config,
         major: raw_types::c_int,
@@ -15157,7 +15157,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_min_version"]
+    #[link_name = "mbedtls_ssl_conf_min_version"]
     pub fn ssl_conf_min_version(
         conf: *mut ssl_config,
         major: raw_types::c_int,
@@ -15165,114 +15165,114 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_fallback"]
+    #[link_name = "mbedtls_ssl_conf_fallback"]
     pub fn ssl_conf_fallback(conf: *mut ssl_config, fallback: raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_encrypt_then_mac"]
+    #[link_name = "mbedtls_ssl_conf_encrypt_then_mac"]
     pub fn ssl_conf_encrypt_then_mac(conf: *mut ssl_config, etm: raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_extended_master_secret"]
+    #[link_name = "mbedtls_ssl_conf_extended_master_secret"]
     pub fn ssl_conf_extended_master_secret(conf: *mut ssl_config, ems: raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_arc4_support"]
+    #[link_name = "mbedtls_ssl_conf_arc4_support"]
     pub fn ssl_conf_arc4_support(conf: *mut ssl_config, arc4: raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_cert_req_ca_list"]
+    #[link_name = "mbedtls_ssl_conf_cert_req_ca_list"]
     pub fn ssl_conf_cert_req_ca_list(conf: *mut ssl_config, cert_req_ca_list: raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_max_frag_len"]
+    #[link_name = "mbedtls_ssl_conf_max_frag_len"]
     pub fn ssl_conf_max_frag_len(
         conf: *mut ssl_config,
         mfl_code: raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_truncated_hmac"]
+    #[link_name = "mbedtls_ssl_conf_truncated_hmac"]
     pub fn ssl_conf_truncated_hmac(conf: *mut ssl_config, truncate: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_cbc_record_splitting"]
+    #[link_name = "mbedtls_ssl_conf_cbc_record_splitting"]
     pub fn ssl_conf_cbc_record_splitting(conf: *mut ssl_config, split: raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_session_tickets"]
+    #[link_name = "mbedtls_ssl_conf_session_tickets"]
     pub fn ssl_conf_session_tickets(conf: *mut ssl_config, use_tickets: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_renegotiation"]
+    #[link_name = "mbedtls_ssl_conf_renegotiation"]
     pub fn ssl_conf_renegotiation(conf: *mut ssl_config, renegotiation: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_legacy_renegotiation"]
+    #[link_name = "mbedtls_ssl_conf_legacy_renegotiation"]
     pub fn ssl_conf_legacy_renegotiation(conf: *mut ssl_config, allow_legacy: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_renegotiation_enforced"]
+    #[link_name = "mbedtls_ssl_conf_renegotiation_enforced"]
     pub fn ssl_conf_renegotiation_enforced(conf: *mut ssl_config, max_records: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_conf_renegotiation_period"]
+    #[link_name = "mbedtls_ssl_conf_renegotiation_period"]
     pub fn ssl_conf_renegotiation_period(conf: *mut ssl_config, period: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_check_pending"]
+    #[link_name = "mbedtls_ssl_check_pending"]
     pub fn ssl_check_pending(ssl: *const ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_bytes_avail"]
+    #[link_name = "mbedtls_ssl_get_bytes_avail"]
     pub fn ssl_get_bytes_avail(ssl: *const ssl_context) -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_verify_result"]
+    #[link_name = "mbedtls_ssl_get_verify_result"]
     pub fn ssl_get_verify_result(ssl: *const ssl_context) -> u32;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_ciphersuite"]
+    #[link_name = "mbedtls_ssl_get_ciphersuite"]
     pub fn ssl_get_ciphersuite(ssl: *const ssl_context) -> *const raw_types::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_version"]
+    #[link_name = "mbedtls_ssl_get_version"]
     pub fn ssl_get_version(ssl: *const ssl_context) -> *const raw_types::c_char;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_record_expansion"]
+    #[link_name = "mbedtls_ssl_get_record_expansion"]
     pub fn ssl_get_record_expansion(ssl: *const ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_max_frag_len"]
+    #[link_name = "mbedtls_ssl_get_max_frag_len"]
     pub fn ssl_get_max_frag_len(ssl: *const ssl_context) -> usize;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_max_out_record_payload"]
+    #[link_name = "mbedtls_ssl_get_max_out_record_payload"]
     pub fn ssl_get_max_out_record_payload(ssl: *const ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_peer_cert"]
+    #[link_name = "mbedtls_ssl_get_peer_cert"]
     pub fn ssl_get_peer_cert(ssl: *const ssl_context) -> *const x509_crt;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_session"]
+    #[link_name = "mbedtls_ssl_get_session"]
     pub fn ssl_get_session(ssl: *const ssl_context, session: *mut ssl_session) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_handshake"]
+    #[link_name = "mbedtls_ssl_handshake"]
     pub fn ssl_handshake(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_handshake_step"]
+    #[link_name = "mbedtls_ssl_handshake_step"]
     pub fn ssl_handshake_step(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_renegotiate"]
+    #[link_name = "mbedtls_ssl_renegotiate"]
     pub fn ssl_renegotiate(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_read"]
+    #[link_name = "mbedtls_ssl_read"]
     pub fn ssl_read(
         ssl: *mut ssl_context,
         buf: *mut raw_types::c_uchar,
@@ -15280,7 +15280,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_write"]
+    #[link_name = "mbedtls_ssl_write"]
     pub fn ssl_write(
         ssl: *mut ssl_context,
         buf: *const raw_types::c_uchar,
@@ -15288,7 +15288,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_send_alert_message"]
+    #[link_name = "mbedtls_ssl_send_alert_message"]
     pub fn ssl_send_alert_message(
         ssl: *mut ssl_context,
         level: raw_types::c_uchar,
@@ -15296,19 +15296,19 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_close_notify"]
+    #[link_name = "mbedtls_ssl_close_notify"]
     pub fn ssl_close_notify(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_free"]
+    #[link_name = "mbedtls_ssl_free"]
     pub fn ssl_free(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_config_init"]
+    #[link_name = "mbedtls_ssl_config_init"]
     pub fn ssl_config_init(conf: *mut ssl_config);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_config_defaults"]
+    #[link_name = "mbedtls_ssl_config_defaults"]
     pub fn ssl_config_defaults(
         conf: *mut ssl_config,
         endpoint: raw_types::c_int,
@@ -15317,15 +15317,15 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_config_free"]
+    #[link_name = "mbedtls_ssl_config_free"]
     pub fn ssl_config_free(conf: *mut ssl_config);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_session_init"]
+    #[link_name = "mbedtls_ssl_session_init"]
     pub fn ssl_session_init(session: *mut ssl_session);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_session_free"]
+    #[link_name = "mbedtls_ssl_session_free"]
     pub fn ssl_session_free(session: *mut ssl_session);
 }
 #[repr(C)]
@@ -15379,23 +15379,23 @@ fn bindgen_test_layout_md5_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_init"]
+    #[link_name = "mbedtls_md5_init"]
     pub fn md5_init(ctx: *mut md5_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_free"]
+    #[link_name = "mbedtls_md5_free"]
     pub fn md5_free(ctx: *mut md5_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_clone"]
+    #[link_name = "mbedtls_md5_clone"]
     pub fn md5_clone(dst: *mut md5_context, src: *const md5_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_starts_ret"]
+    #[link_name = "mbedtls_md5_starts_ret"]
     pub fn md5_starts_ret(ctx: *mut md5_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_update_ret"]
+    #[link_name = "mbedtls_md5_update_ret"]
     pub fn md5_update_ret(
         ctx: *mut md5_context,
         input: *const raw_types::c_uchar,
@@ -15403,37 +15403,37 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_finish_ret"]
+    #[link_name = "mbedtls_md5_finish_ret"]
     pub fn md5_finish_ret(
         ctx: *mut md5_context,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_md5_process"]
+    #[link_name = "mbedtls_internal_md5_process"]
     pub fn internal_md5_process(
         ctx: *mut md5_context,
         data: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_starts"]
+    #[link_name = "mbedtls_md5_starts"]
     pub fn md5_starts(ctx: *mut md5_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_update"]
+    #[link_name = "mbedtls_md5_update"]
     pub fn md5_update(ctx: *mut md5_context, input: *const raw_types::c_uchar, ilen: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_finish"]
+    #[link_name = "mbedtls_md5_finish"]
     pub fn md5_finish(ctx: *mut md5_context, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_process"]
+    #[link_name = "mbedtls_md5_process"]
     pub fn md5_process(ctx: *mut md5_context, data: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_ret"]
+    #[link_name = "mbedtls_md5_ret"]
     pub fn md5_ret(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -15441,11 +15441,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5"]
+    #[link_name = "mbedtls_md5"]
     pub fn md5(input: *const raw_types::c_uchar, ilen: usize, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_self_test"]
+    #[link_name = "mbedtls_md5_self_test"]
     pub fn md5_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -15499,23 +15499,23 @@ fn bindgen_test_layout_sha1_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_init"]
+    #[link_name = "mbedtls_sha1_init"]
     pub fn sha1_init(ctx: *mut sha1_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_free"]
+    #[link_name = "mbedtls_sha1_free"]
     pub fn sha1_free(ctx: *mut sha1_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_clone"]
+    #[link_name = "mbedtls_sha1_clone"]
     pub fn sha1_clone(dst: *mut sha1_context, src: *const sha1_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_starts_ret"]
+    #[link_name = "mbedtls_sha1_starts_ret"]
     pub fn sha1_starts_ret(ctx: *mut sha1_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_update_ret"]
+    #[link_name = "mbedtls_sha1_update_ret"]
     pub fn sha1_update_ret(
         ctx: *mut sha1_context,
         input: *const raw_types::c_uchar,
@@ -15523,37 +15523,37 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_finish_ret"]
+    #[link_name = "mbedtls_sha1_finish_ret"]
     pub fn sha1_finish_ret(
         ctx: *mut sha1_context,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_sha1_process"]
+    #[link_name = "mbedtls_internal_sha1_process"]
     pub fn internal_sha1_process(
         ctx: *mut sha1_context,
         data: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_starts"]
+    #[link_name = "mbedtls_sha1_starts"]
     pub fn sha1_starts(ctx: *mut sha1_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_update"]
+    #[link_name = "mbedtls_sha1_update"]
     pub fn sha1_update(ctx: *mut sha1_context, input: *const raw_types::c_uchar, ilen: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_finish"]
+    #[link_name = "mbedtls_sha1_finish"]
     pub fn sha1_finish(ctx: *mut sha1_context, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_process"]
+    #[link_name = "mbedtls_sha1_process"]
     pub fn sha1_process(ctx: *mut sha1_context, data: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_ret"]
+    #[link_name = "mbedtls_sha1_ret"]
     pub fn sha1_ret(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -15561,11 +15561,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1"]
+    #[link_name = "mbedtls_sha1"]
     pub fn sha1(input: *const raw_types::c_uchar, ilen: usize, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_self_test"]
+    #[link_name = "mbedtls_sha1_self_test"]
     pub fn sha1_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -15630,24 +15630,24 @@ fn bindgen_test_layout_sha256_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_init"]
+    #[link_name = "mbedtls_sha256_init"]
     pub fn sha256_init(ctx: *mut sha256_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_free"]
+    #[link_name = "mbedtls_sha256_free"]
     pub fn sha256_free(ctx: *mut sha256_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_clone"]
+    #[link_name = "mbedtls_sha256_clone"]
     pub fn sha256_clone(dst: *mut sha256_context, src: *const sha256_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_starts_ret"]
+    #[link_name = "mbedtls_sha256_starts_ret"]
     pub fn sha256_starts_ret(ctx: *mut sha256_context, is224: raw_types::c_int)
         -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_update_ret"]
+    #[link_name = "mbedtls_sha256_update_ret"]
     pub fn sha256_update_ret(
         ctx: *mut sha256_context,
         input: *const raw_types::c_uchar,
@@ -15655,37 +15655,37 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_finish_ret"]
+    #[link_name = "mbedtls_sha256_finish_ret"]
     pub fn sha256_finish_ret(
         ctx: *mut sha256_context,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_sha256_process"]
+    #[link_name = "mbedtls_internal_sha256_process"]
     pub fn internal_sha256_process(
         ctx: *mut sha256_context,
         data: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_starts"]
+    #[link_name = "mbedtls_sha256_starts"]
     pub fn sha256_starts(ctx: *mut sha256_context, is224: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_update"]
+    #[link_name = "mbedtls_sha256_update"]
     pub fn sha256_update(ctx: *mut sha256_context, input: *const raw_types::c_uchar, ilen: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_finish"]
+    #[link_name = "mbedtls_sha256_finish"]
     pub fn sha256_finish(ctx: *mut sha256_context, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_process"]
+    #[link_name = "mbedtls_sha256_process"]
     pub fn sha256_process(ctx: *mut sha256_context, data: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_ret"]
+    #[link_name = "mbedtls_sha256_ret"]
     pub fn sha256_ret(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -15694,7 +15694,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256"]
+    #[link_name = "mbedtls_sha256"]
     pub fn sha256(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -15703,7 +15703,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_self_test"]
+    #[link_name = "mbedtls_sha256_self_test"]
     pub fn sha256_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -15768,24 +15768,24 @@ fn bindgen_test_layout_sha512_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_init"]
+    #[link_name = "mbedtls_sha512_init"]
     pub fn sha512_init(ctx: *mut sha512_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_free"]
+    #[link_name = "mbedtls_sha512_free"]
     pub fn sha512_free(ctx: *mut sha512_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_clone"]
+    #[link_name = "mbedtls_sha512_clone"]
     pub fn sha512_clone(dst: *mut sha512_context, src: *const sha512_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_starts_ret"]
+    #[link_name = "mbedtls_sha512_starts_ret"]
     pub fn sha512_starts_ret(ctx: *mut sha512_context, is384: raw_types::c_int)
         -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_update_ret"]
+    #[link_name = "mbedtls_sha512_update_ret"]
     pub fn sha512_update_ret(
         ctx: *mut sha512_context,
         input: *const raw_types::c_uchar,
@@ -15793,37 +15793,37 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_finish_ret"]
+    #[link_name = "mbedtls_sha512_finish_ret"]
     pub fn sha512_finish_ret(
         ctx: *mut sha512_context,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_sha512_process"]
+    #[link_name = "mbedtls_internal_sha512_process"]
     pub fn internal_sha512_process(
         ctx: *mut sha512_context,
         data: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_starts"]
+    #[link_name = "mbedtls_sha512_starts"]
     pub fn sha512_starts(ctx: *mut sha512_context, is384: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_update"]
+    #[link_name = "mbedtls_sha512_update"]
     pub fn sha512_update(ctx: *mut sha512_context, input: *const raw_types::c_uchar, ilen: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_finish"]
+    #[link_name = "mbedtls_sha512_finish"]
     pub fn sha512_finish(ctx: *mut sha512_context, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_process"]
+    #[link_name = "mbedtls_sha512_process"]
     pub fn sha512_process(ctx: *mut sha512_context, data: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_ret"]
+    #[link_name = "mbedtls_sha512_ret"]
     pub fn sha512_ret(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -15832,7 +15832,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512"]
+    #[link_name = "mbedtls_sha512"]
     pub fn sha512(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -15841,7 +15841,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_self_test"]
+    #[link_name = "mbedtls_sha512_self_test"]
     pub fn sha512_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 pub const ECJPAKE_CLIENT: ecjpake_role = 0;
@@ -15997,11 +15997,11 @@ fn bindgen_test_layout_ecjpake_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_init"]
+    #[link_name = "mbedtls_ecjpake_init"]
     pub fn ecjpake_init(ctx: *mut ecjpake_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_setup"]
+    #[link_name = "mbedtls_ecjpake_setup"]
     pub fn ecjpake_setup(
         ctx: *mut ecjpake_context,
         role: ecjpake_role,
@@ -16012,11 +16012,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_check"]
+    #[link_name = "mbedtls_ecjpake_check"]
     pub fn ecjpake_check(ctx: *const ecjpake_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_write_round_one"]
+    #[link_name = "mbedtls_ecjpake_write_round_one"]
     pub fn ecjpake_write_round_one(
         ctx: *mut ecjpake_context,
         buf: *mut raw_types::c_uchar,
@@ -16033,7 +16033,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_read_round_one"]
+    #[link_name = "mbedtls_ecjpake_read_round_one"]
     pub fn ecjpake_read_round_one(
         ctx: *mut ecjpake_context,
         buf: *const raw_types::c_uchar,
@@ -16041,7 +16041,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_write_round_two"]
+    #[link_name = "mbedtls_ecjpake_write_round_two"]
     pub fn ecjpake_write_round_two(
         ctx: *mut ecjpake_context,
         buf: *mut raw_types::c_uchar,
@@ -16058,7 +16058,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_read_round_two"]
+    #[link_name = "mbedtls_ecjpake_read_round_two"]
     pub fn ecjpake_read_round_two(
         ctx: *mut ecjpake_context,
         buf: *const raw_types::c_uchar,
@@ -16066,7 +16066,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_derive_secret"]
+    #[link_name = "mbedtls_ecjpake_derive_secret"]
     pub fn ecjpake_derive_secret(
         ctx: *mut ecjpake_context,
         buf: *mut raw_types::c_uchar,
@@ -16083,11 +16083,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_free"]
+    #[link_name = "mbedtls_ecjpake_free"]
     pub fn ecjpake_free(ctx: *mut ecjpake_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecjpake_self_test"]
+    #[link_name = "mbedtls_ecjpake_self_test"]
     pub fn ecjpake_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -16180,23 +16180,23 @@ fn bindgen_test_layout_aes_xts_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_init"]
+    #[link_name = "mbedtls_aes_init"]
     pub fn aes_init(ctx: *mut aes_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_free"]
+    #[link_name = "mbedtls_aes_free"]
     pub fn aes_free(ctx: *mut aes_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_xts_init"]
+    #[link_name = "mbedtls_aes_xts_init"]
     pub fn aes_xts_init(ctx: *mut aes_xts_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_xts_free"]
+    #[link_name = "mbedtls_aes_xts_free"]
     pub fn aes_xts_free(ctx: *mut aes_xts_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_setkey_enc"]
+    #[link_name = "mbedtls_aes_setkey_enc"]
     pub fn aes_setkey_enc(
         ctx: *mut aes_context,
         key: *const raw_types::c_uchar,
@@ -16204,7 +16204,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_setkey_dec"]
+    #[link_name = "mbedtls_aes_setkey_dec"]
     pub fn aes_setkey_dec(
         ctx: *mut aes_context,
         key: *const raw_types::c_uchar,
@@ -16212,7 +16212,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_xts_setkey_enc"]
+    #[link_name = "mbedtls_aes_xts_setkey_enc"]
     pub fn aes_xts_setkey_enc(
         ctx: *mut aes_xts_context,
         key: *const raw_types::c_uchar,
@@ -16220,7 +16220,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_xts_setkey_dec"]
+    #[link_name = "mbedtls_aes_xts_setkey_dec"]
     pub fn aes_xts_setkey_dec(
         ctx: *mut aes_xts_context,
         key: *const raw_types::c_uchar,
@@ -16228,7 +16228,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_crypt_ecb"]
+    #[link_name = "mbedtls_aes_crypt_ecb"]
     pub fn aes_crypt_ecb(
         ctx: *mut aes_context,
         mode: raw_types::c_int,
@@ -16237,7 +16237,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_crypt_cbc"]
+    #[link_name = "mbedtls_aes_crypt_cbc"]
     pub fn aes_crypt_cbc(
         ctx: *mut aes_context,
         mode: raw_types::c_int,
@@ -16248,7 +16248,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_crypt_xts"]
+    #[link_name = "mbedtls_aes_crypt_xts"]
     pub fn aes_crypt_xts(
         ctx: *mut aes_xts_context,
         mode: raw_types::c_int,
@@ -16259,7 +16259,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_crypt_cfb128"]
+    #[link_name = "mbedtls_aes_crypt_cfb128"]
     pub fn aes_crypt_cfb128(
         ctx: *mut aes_context,
         mode: raw_types::c_int,
@@ -16271,7 +16271,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_crypt_cfb8"]
+    #[link_name = "mbedtls_aes_crypt_cfb8"]
     pub fn aes_crypt_cfb8(
         ctx: *mut aes_context,
         mode: raw_types::c_int,
@@ -16282,7 +16282,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_crypt_ofb"]
+    #[link_name = "mbedtls_aes_crypt_ofb"]
     pub fn aes_crypt_ofb(
         ctx: *mut aes_context,
         length: usize,
@@ -16293,7 +16293,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_crypt_ctr"]
+    #[link_name = "mbedtls_aes_crypt_ctr"]
     pub fn aes_crypt_ctr(
         ctx: *mut aes_context,
         length: usize,
@@ -16305,7 +16305,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_aes_encrypt"]
+    #[link_name = "mbedtls_internal_aes_encrypt"]
     pub fn internal_aes_encrypt(
         ctx: *mut aes_context,
         input: *const raw_types::c_uchar,
@@ -16313,7 +16313,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_aes_decrypt"]
+    #[link_name = "mbedtls_internal_aes_decrypt"]
     pub fn internal_aes_decrypt(
         ctx: *mut aes_context,
         input: *const raw_types::c_uchar,
@@ -16321,7 +16321,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_encrypt"]
+    #[link_name = "mbedtls_aes_encrypt"]
     pub fn aes_encrypt(
         ctx: *mut aes_context,
         input: *const raw_types::c_uchar,
@@ -16329,7 +16329,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_decrypt"]
+    #[link_name = "mbedtls_aes_decrypt"]
     pub fn aes_decrypt(
         ctx: *mut aes_context,
         input: *const raw_types::c_uchar,
@@ -16337,7 +16337,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_self_test"]
+    #[link_name = "mbedtls_aes_self_test"]
     pub fn aes_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -16369,11 +16369,11 @@ fn bindgen_test_layout_net_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_init"]
+    #[link_name = "mbedtls_net_init"]
     pub fn net_init(ctx: *mut net_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_connect"]
+    #[link_name = "mbedtls_net_connect"]
     pub fn net_connect(
         ctx: *mut net_context,
         host: *const raw_types::c_char,
@@ -16382,7 +16382,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_bind"]
+    #[link_name = "mbedtls_net_bind"]
     pub fn net_bind(
         ctx: *mut net_context,
         bind_ip: *const raw_types::c_char,
@@ -16391,7 +16391,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_accept"]
+    #[link_name = "mbedtls_net_accept"]
     pub fn net_accept(
         bind_ctx: *mut net_context,
         client_ctx: *mut net_context,
@@ -16401,23 +16401,23 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_poll"]
+    #[link_name = "mbedtls_net_poll"]
     pub fn net_poll(ctx: *mut net_context, rw: u32, timeout: u32) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_set_block"]
+    #[link_name = "mbedtls_net_set_block"]
     pub fn net_set_block(ctx: *mut net_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_set_nonblock"]
+    #[link_name = "mbedtls_net_set_nonblock"]
     pub fn net_set_nonblock(ctx: *mut net_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_usleep"]
+    #[link_name = "mbedtls_net_usleep"]
     pub fn net_usleep(usec: raw_types::c_ulong);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_recv"]
+    #[link_name = "mbedtls_net_recv"]
     pub fn net_recv(
         ctx: *mut raw_types::c_void,
         buf: *mut raw_types::c_uchar,
@@ -16425,7 +16425,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_send"]
+    #[link_name = "mbedtls_net_send"]
     pub fn net_send(
         ctx: *mut raw_types::c_void,
         buf: *const raw_types::c_uchar,
@@ -16433,7 +16433,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_recv_timeout"]
+    #[link_name = "mbedtls_net_recv_timeout"]
     pub fn net_recv_timeout(
         ctx: *mut raw_types::c_void,
         buf: *mut raw_types::c_uchar,
@@ -16442,7 +16442,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_net_free"]
+    #[link_name = "mbedtls_net_free"]
     pub fn net_free(ctx: *mut net_context);
 }
 #[repr(C)]
@@ -16518,15 +16518,15 @@ fn bindgen_test_layout_havege_state() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_havege_init"]
+    #[link_name = "mbedtls_havege_init"]
     pub fn havege_init(hs: *mut havege_state);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_havege_free"]
+    #[link_name = "mbedtls_havege_free"]
     pub fn havege_free(hs: *mut havege_state);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_havege_random"]
+    #[link_name = "mbedtls_havege_random"]
     pub fn havege_random(
         p_rng: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -16606,22 +16606,22 @@ fn bindgen_test_layout_poly1305_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_poly1305_init"]
+    #[link_name = "mbedtls_poly1305_init"]
     pub fn poly1305_init(ctx: *mut poly1305_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_poly1305_free"]
+    #[link_name = "mbedtls_poly1305_free"]
     pub fn poly1305_free(ctx: *mut poly1305_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_poly1305_starts"]
+    #[link_name = "mbedtls_poly1305_starts"]
     pub fn poly1305_starts(
         ctx: *mut poly1305_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_poly1305_update"]
+    #[link_name = "mbedtls_poly1305_update"]
     pub fn poly1305_update(
         ctx: *mut poly1305_context,
         input: *const raw_types::c_uchar,
@@ -16629,14 +16629,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_poly1305_finish"]
+    #[link_name = "mbedtls_poly1305_finish"]
     pub fn poly1305_finish(
         ctx: *mut poly1305_context,
         mac: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_poly1305_mac"]
+    #[link_name = "mbedtls_poly1305_mac"]
     pub fn poly1305_mac(
         key: *const raw_types::c_uchar,
         input: *const raw_types::c_uchar,
@@ -16645,7 +16645,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_poly1305_self_test"]
+    #[link_name = "mbedtls_poly1305_self_test"]
     pub fn poly1305_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -16701,22 +16701,22 @@ fn bindgen_test_layout_chacha20_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chacha20_init"]
+    #[link_name = "mbedtls_chacha20_init"]
     pub fn chacha20_init(ctx: *mut chacha20_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chacha20_free"]
+    #[link_name = "mbedtls_chacha20_free"]
     pub fn chacha20_free(ctx: *mut chacha20_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chacha20_setkey"]
+    #[link_name = "mbedtls_chacha20_setkey"]
     pub fn chacha20_setkey(
         ctx: *mut chacha20_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chacha20_starts"]
+    #[link_name = "mbedtls_chacha20_starts"]
     pub fn chacha20_starts(
         ctx: *mut chacha20_context,
         nonce: *const raw_types::c_uchar,
@@ -16724,7 +16724,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chacha20_update"]
+    #[link_name = "mbedtls_chacha20_update"]
     pub fn chacha20_update(
         ctx: *mut chacha20_context,
         size: usize,
@@ -16733,7 +16733,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chacha20_crypt"]
+    #[link_name = "mbedtls_chacha20_crypt"]
     pub fn chacha20_crypt(
         key: *const raw_types::c_uchar,
         nonce: *const raw_types::c_uchar,
@@ -16744,7 +16744,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chacha20_self_test"]
+    #[link_name = "mbedtls_chacha20_self_test"]
     pub fn chacha20_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -16776,19 +16776,19 @@ fn bindgen_test_layout_xtea_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_xtea_init"]
+    #[link_name = "mbedtls_xtea_init"]
     pub fn xtea_init(ctx: *mut xtea_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_xtea_free"]
+    #[link_name = "mbedtls_xtea_free"]
     pub fn xtea_free(ctx: *mut xtea_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_xtea_setup"]
+    #[link_name = "mbedtls_xtea_setup"]
     pub fn xtea_setup(ctx: *mut xtea_context, key: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_xtea_crypt_ecb"]
+    #[link_name = "mbedtls_xtea_crypt_ecb"]
     pub fn xtea_crypt_ecb(
         ctx: *mut xtea_context,
         mode: raw_types::c_int,
@@ -16797,7 +16797,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_xtea_crypt_cbc"]
+    #[link_name = "mbedtls_xtea_crypt_cbc"]
     pub fn xtea_crypt_cbc(
         ctx: *mut xtea_context,
         mode: raw_types::c_int,
@@ -16808,7 +16808,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_xtea_self_test"]
+    #[link_name = "mbedtls_xtea_self_test"]
     pub fn xtea_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -17011,7 +17011,7 @@ fn bindgen_test_layout_x509write_csr() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_csr_parse_der"]
+    #[link_name = "mbedtls_x509_csr_parse_der"]
     pub fn x509_csr_parse_der(
         csr: *mut x509_csr,
         buf: *const raw_types::c_uchar,
@@ -17019,7 +17019,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_csr_parse"]
+    #[link_name = "mbedtls_x509_csr_parse"]
     pub fn x509_csr_parse(
         csr: *mut x509_csr,
         buf: *const raw_types::c_uchar,
@@ -17027,14 +17027,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_csr_parse_file"]
+    #[link_name = "mbedtls_x509_csr_parse_file"]
     pub fn x509_csr_parse_file(
         csr: *mut x509_csr,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_csr_info"]
+    #[link_name = "mbedtls_x509_csr_info"]
     pub fn x509_csr_info(
         buf: *mut raw_types::c_char,
         size: usize,
@@ -17043,48 +17043,48 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_csr_init"]
+    #[link_name = "mbedtls_x509_csr_init"]
     pub fn x509_csr_init(csr: *mut x509_csr);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509_csr_free"]
+    #[link_name = "mbedtls_x509_csr_free"]
     pub fn x509_csr_free(csr: *mut x509_csr);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_init"]
+    #[link_name = "mbedtls_x509write_csr_init"]
     pub fn x509write_csr_init(ctx: *mut x509write_csr);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_set_subject_name"]
+    #[link_name = "mbedtls_x509write_csr_set_subject_name"]
     pub fn x509write_csr_set_subject_name(
         ctx: *mut x509write_csr,
         subject_name: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_set_key"]
+    #[link_name = "mbedtls_x509write_csr_set_key"]
     pub fn x509write_csr_set_key(ctx: *mut x509write_csr, key: *mut pk_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_set_md_alg"]
+    #[link_name = "mbedtls_x509write_csr_set_md_alg"]
     pub fn x509write_csr_set_md_alg(ctx: *mut x509write_csr, md_alg: md_type_t);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_set_key_usage"]
+    #[link_name = "mbedtls_x509write_csr_set_key_usage"]
     pub fn x509write_csr_set_key_usage(
         ctx: *mut x509write_csr,
         key_usage: raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_set_ns_cert_type"]
+    #[link_name = "mbedtls_x509write_csr_set_ns_cert_type"]
     pub fn x509write_csr_set_ns_cert_type(
         ctx: *mut x509write_csr,
         ns_cert_type: raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_set_extension"]
+    #[link_name = "mbedtls_x509write_csr_set_extension"]
     pub fn x509write_csr_set_extension(
         ctx: *mut x509write_csr,
         oid: *const raw_types::c_char,
@@ -17094,11 +17094,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_free"]
+    #[link_name = "mbedtls_x509write_csr_free"]
     pub fn x509write_csr_free(ctx: *mut x509write_csr);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_der"]
+    #[link_name = "mbedtls_x509write_csr_der"]
     pub fn x509write_csr_der(
         ctx: *mut x509write_csr,
         buf: *mut raw_types::c_uchar,
@@ -17114,7 +17114,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_x509write_csr_pem"]
+    #[link_name = "mbedtls_x509write_csr_pem"]
     pub fn x509write_csr_pem(
         ctx: *mut x509write_csr,
         buf: *mut raw_types::c_uchar,
@@ -17130,19 +17130,19 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_version_get_number"]
+    #[link_name = "mbedtls_version_get_number"]
     pub fn version_get_number() -> raw_types::c_uint;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_version_get_string"]
+    #[link_name = "mbedtls_version_get_string"]
     pub fn version_get_string(string: *mut raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_version_get_string_full"]
+    #[link_name = "mbedtls_version_get_string_full"]
     pub fn version_get_string_full(string: *mut raw_types::c_char);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_version_check_feature"]
+    #[link_name = "mbedtls_version_check_feature"]
     pub fn version_check_feature(feature: *const raw_types::c_char) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -17224,34 +17224,34 @@ fn bindgen_test_layout_timing_delay_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_timing_alarmed"]
+    #[link_name = "mbedtls_timing_alarmed"]
     pub static mut timing_alarmed: raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_timing_hardclock"]
+    #[link_name = "mbedtls_timing_hardclock"]
     pub fn timing_hardclock() -> raw_types::c_ulong;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_timing_get_timer"]
+    #[link_name = "mbedtls_timing_get_timer"]
     pub fn timing_get_timer(
         val: *mut timing_hr_time,
         reset: raw_types::c_int,
     ) -> raw_types::c_ulong;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_set_alarm"]
+    #[link_name = "mbedtls_set_alarm"]
     pub fn set_alarm(seconds: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_timing_set_delay"]
+    #[link_name = "mbedtls_timing_set_delay"]
     pub fn timing_set_delay(data: *mut raw_types::c_void, int_ms: u32, fin_ms: u32);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_timing_get_delay"]
+    #[link_name = "mbedtls_timing_get_delay"]
     pub fn timing_get_delay(data: *mut raw_types::c_void) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_timing_self_test"]
+    #[link_name = "mbedtls_timing_self_test"]
     pub fn timing_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -17396,11 +17396,11 @@ fn bindgen_test_layout_ssl_ticket_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ticket_init"]
+    #[link_name = "mbedtls_ssl_ticket_init"]
     pub fn ssl_ticket_init(ctx: *mut ssl_ticket_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ticket_setup"]
+    #[link_name = "mbedtls_ssl_ticket_setup"]
     pub fn ssl_ticket_setup(
         ctx: *mut ssl_ticket_context,
         f_rng: ::core::option::Option<
@@ -17416,7 +17416,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ticket_write"]
+    #[link_name = "mbedtls_ssl_ticket_write"]
     pub fn ssl_ticket_write(
         p_ticket: *mut raw_types::c_void,
         session: *const ssl_session,
@@ -17427,7 +17427,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ticket_parse"]
+    #[link_name = "mbedtls_ssl_ticket_parse"]
     pub fn ssl_ticket_parse(
         p_ticket: *mut raw_types::c_void,
         session: *mut ssl_session,
@@ -17436,7 +17436,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_ticket_free"]
+    #[link_name = "mbedtls_ssl_ticket_free"]
     pub fn ssl_ticket_free(ctx: *mut ssl_ticket_context);
 }
 #[repr(C)]
@@ -18579,11 +18579,11 @@ fn bindgen_test_layout_ssl_flight_item() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_sig_hash_set_find"]
+    #[link_name = "mbedtls_ssl_sig_hash_set_find"]
     pub fn ssl_sig_hash_set_find(set: *mut ssl_sig_hash_set_t, sig_alg: pk_type_t) -> md_type_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_sig_hash_set_add"]
+    #[link_name = "mbedtls_ssl_sig_hash_set_add"]
     pub fn ssl_sig_hash_set_add(
         set: *mut ssl_sig_hash_set_t,
         sig_alg: pk_type_t,
@@ -18591,145 +18591,145 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_sig_hash_set_const_hash"]
+    #[link_name = "mbedtls_ssl_sig_hash_set_const_hash"]
     pub fn ssl_sig_hash_set_const_hash(set: *mut ssl_sig_hash_set_t, md_alg: md_type_t);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_transform_free"]
+    #[link_name = "mbedtls_ssl_transform_free"]
     pub fn ssl_transform_free(transform: *mut ssl_transform);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_handshake_free"]
+    #[link_name = "mbedtls_ssl_handshake_free"]
     pub fn ssl_handshake_free(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_handshake_client_step"]
+    #[link_name = "mbedtls_ssl_handshake_client_step"]
     pub fn ssl_handshake_client_step(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_handshake_server_step"]
+    #[link_name = "mbedtls_ssl_handshake_server_step"]
     pub fn ssl_handshake_server_step(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_handshake_wrapup"]
+    #[link_name = "mbedtls_ssl_handshake_wrapup"]
     pub fn ssl_handshake_wrapup(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_send_fatal_handshake_failure"]
+    #[link_name = "mbedtls_ssl_send_fatal_handshake_failure"]
     pub fn ssl_send_fatal_handshake_failure(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_reset_checksum"]
+    #[link_name = "mbedtls_ssl_reset_checksum"]
     pub fn ssl_reset_checksum(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_derive_keys"]
+    #[link_name = "mbedtls_ssl_derive_keys"]
     pub fn ssl_derive_keys(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_handle_message_type"]
+    #[link_name = "mbedtls_ssl_handle_message_type"]
     pub fn ssl_handle_message_type(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_prepare_handshake_record"]
+    #[link_name = "mbedtls_ssl_prepare_handshake_record"]
     pub fn ssl_prepare_handshake_record(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_update_handshake_status"]
+    #[link_name = "mbedtls_ssl_update_handshake_status"]
     pub fn ssl_update_handshake_status(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_read_record"]
+    #[link_name = "mbedtls_ssl_read_record"]
     pub fn ssl_read_record(
         ssl: *mut ssl_context,
         update_hs_digest: raw_types::c_uint,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_fetch_input"]
+    #[link_name = "mbedtls_ssl_fetch_input"]
     pub fn ssl_fetch_input(ssl: *mut ssl_context, nb_want: usize) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_write_handshake_msg"]
+    #[link_name = "mbedtls_ssl_write_handshake_msg"]
     pub fn ssl_write_handshake_msg(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_write_record"]
+    #[link_name = "mbedtls_ssl_write_record"]
     pub fn ssl_write_record(ssl: *mut ssl_context, force_flush: u8) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_flush_output"]
+    #[link_name = "mbedtls_ssl_flush_output"]
     pub fn ssl_flush_output(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_parse_certificate"]
+    #[link_name = "mbedtls_ssl_parse_certificate"]
     pub fn ssl_parse_certificate(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_write_certificate"]
+    #[link_name = "mbedtls_ssl_write_certificate"]
     pub fn ssl_write_certificate(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_parse_change_cipher_spec"]
+    #[link_name = "mbedtls_ssl_parse_change_cipher_spec"]
     pub fn ssl_parse_change_cipher_spec(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_write_change_cipher_spec"]
+    #[link_name = "mbedtls_ssl_write_change_cipher_spec"]
     pub fn ssl_write_change_cipher_spec(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_parse_finished"]
+    #[link_name = "mbedtls_ssl_parse_finished"]
     pub fn ssl_parse_finished(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_write_finished"]
+    #[link_name = "mbedtls_ssl_write_finished"]
     pub fn ssl_write_finished(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_optimize_checksum"]
+    #[link_name = "mbedtls_ssl_optimize_checksum"]
     pub fn ssl_optimize_checksum(ssl: *mut ssl_context, ciphersuite_info: *const ssl_ciphersuite_t);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_psk_derive_premaster"]
+    #[link_name = "mbedtls_ssl_psk_derive_premaster"]
     pub fn ssl_psk_derive_premaster(
         ssl: *mut ssl_context,
         key_ex: key_exchange_type_t,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_sig_from_pk"]
+    #[link_name = "mbedtls_ssl_sig_from_pk"]
     pub fn ssl_sig_from_pk(pk: *mut pk_context) -> raw_types::c_uchar;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_sig_from_pk_alg"]
+    #[link_name = "mbedtls_ssl_sig_from_pk_alg"]
     pub fn ssl_sig_from_pk_alg(type_: pk_type_t) -> raw_types::c_uchar;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_pk_alg_from_sig"]
+    #[link_name = "mbedtls_ssl_pk_alg_from_sig"]
     pub fn ssl_pk_alg_from_sig(sig: raw_types::c_uchar) -> pk_type_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_md_alg_from_hash"]
+    #[link_name = "mbedtls_ssl_md_alg_from_hash"]
     pub fn ssl_md_alg_from_hash(hash: raw_types::c_uchar) -> md_type_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_hash_from_md_alg"]
+    #[link_name = "mbedtls_ssl_hash_from_md_alg"]
     pub fn ssl_hash_from_md_alg(md: raw_types::c_int) -> raw_types::c_uchar;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_set_calc_verify_md"]
+    #[link_name = "mbedtls_ssl_set_calc_verify_md"]
     pub fn ssl_set_calc_verify_md(ssl: *mut ssl_context, md: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_check_curve"]
+    #[link_name = "mbedtls_ssl_check_curve"]
     pub fn ssl_check_curve(ssl: *const ssl_context, grp_id: ecp_group_id) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_check_sig_hash"]
+    #[link_name = "mbedtls_ssl_check_sig_hash"]
     pub fn ssl_check_sig_hash(ssl: *const ssl_context, md: md_type_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_check_cert_usage"]
+    #[link_name = "mbedtls_ssl_check_cert_usage"]
     pub fn ssl_check_cert_usage(
         cert: *const x509_crt,
         ciphersuite: *const ssl_ciphersuite_t,
@@ -18738,7 +18738,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_write_version"]
+    #[link_name = "mbedtls_ssl_write_version"]
     pub fn ssl_write_version(
         major: raw_types::c_int,
         minor: raw_types::c_int,
@@ -18747,7 +18747,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_read_version"]
+    #[link_name = "mbedtls_ssl_read_version"]
     pub fn ssl_read_version(
         major: *mut raw_types::c_int,
         minor: *mut raw_types::c_int,
@@ -18756,31 +18756,31 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_send_flight_completed"]
+    #[link_name = "mbedtls_ssl_send_flight_completed"]
     pub fn ssl_send_flight_completed(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_recv_flight_completed"]
+    #[link_name = "mbedtls_ssl_recv_flight_completed"]
     pub fn ssl_recv_flight_completed(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_resend"]
+    #[link_name = "mbedtls_ssl_resend"]
     pub fn ssl_resend(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_flight_transmit"]
+    #[link_name = "mbedtls_ssl_flight_transmit"]
     pub fn ssl_flight_transmit(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_dtls_replay_check"]
+    #[link_name = "mbedtls_ssl_dtls_replay_check"]
     pub fn ssl_dtls_replay_check(ssl: *mut ssl_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_dtls_replay_update"]
+    #[link_name = "mbedtls_ssl_dtls_replay_update"]
     pub fn ssl_dtls_replay_update(ssl: *mut ssl_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_key_exchange_md_ssl_tls"]
+    #[link_name = "mbedtls_ssl_get_key_exchange_md_ssl_tls"]
     pub fn ssl_get_key_exchange_md_ssl_tls(
         ssl: *mut ssl_context,
         output: *mut raw_types::c_uchar,
@@ -18789,7 +18789,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_get_key_exchange_md_tls1_2"]
+    #[link_name = "mbedtls_ssl_get_key_exchange_md_tls1_2"]
     pub fn ssl_get_key_exchange_md_tls1_2(
         ssl: *mut ssl_context,
         hash: *mut raw_types::c_uchar,
@@ -18850,11 +18850,11 @@ fn bindgen_test_layout_ssl_cookie_ctx() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cookie_init"]
+    #[link_name = "mbedtls_ssl_cookie_init"]
     pub fn ssl_cookie_init(ctx: *mut ssl_cookie_ctx);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cookie_setup"]
+    #[link_name = "mbedtls_ssl_cookie_setup"]
     pub fn ssl_cookie_setup(
         ctx: *mut ssl_cookie_ctx,
         f_rng: ::core::option::Option<
@@ -18868,15 +18868,15 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cookie_set_timeout"]
+    #[link_name = "mbedtls_ssl_cookie_set_timeout"]
     pub fn ssl_cookie_set_timeout(ctx: *mut ssl_cookie_ctx, delay: raw_types::c_ulong);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cookie_free"]
+    #[link_name = "mbedtls_ssl_cookie_free"]
     pub fn ssl_cookie_free(ctx: *mut ssl_cookie_ctx);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cookie_write"]
+    #[link_name = "mbedtls_ssl_cookie_write"]
     pub fn ssl_cookie_write(
         ctx: *mut raw_types::c_void,
         p: *mut *mut raw_types::c_uchar,
@@ -18886,7 +18886,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cookie_check"]
+    #[link_name = "mbedtls_ssl_cookie_check"]
     pub fn ssl_cookie_check(
         ctx: *mut raw_types::c_void,
         cookie: *const raw_types::c_uchar,
@@ -19018,37 +19018,37 @@ fn bindgen_test_layout_ssl_cache_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cache_init"]
+    #[link_name = "mbedtls_ssl_cache_init"]
     pub fn ssl_cache_init(cache: *mut ssl_cache_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cache_get"]
+    #[link_name = "mbedtls_ssl_cache_get"]
     pub fn ssl_cache_get(
         data: *mut raw_types::c_void,
         session: *mut ssl_session,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cache_set"]
+    #[link_name = "mbedtls_ssl_cache_set"]
     pub fn ssl_cache_set(
         data: *mut raw_types::c_void,
         session: *const ssl_session,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cache_set_timeout"]
+    #[link_name = "mbedtls_ssl_cache_set_timeout"]
     pub fn ssl_cache_set_timeout(cache: *mut ssl_cache_context, timeout: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cache_set_max_entries"]
+    #[link_name = "mbedtls_ssl_cache_set_max_entries"]
     pub fn ssl_cache_set_max_entries(cache: *mut ssl_cache_context, max: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ssl_cache_free"]
+    #[link_name = "mbedtls_ssl_cache_free"]
     pub fn ssl_cache_free(cache: *mut ssl_cache_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_deduce_primes"]
+    #[link_name = "mbedtls_rsa_deduce_primes"]
     pub fn rsa_deduce_primes(
         N: *const mpi,
         E: *const mpi,
@@ -19058,7 +19058,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_deduce_private_exponent"]
+    #[link_name = "mbedtls_rsa_deduce_private_exponent"]
     pub fn rsa_deduce_private_exponent(
         P: *const mpi,
         Q: *const mpi,
@@ -19067,7 +19067,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_deduce_crt"]
+    #[link_name = "mbedtls_rsa_deduce_crt"]
     pub fn rsa_deduce_crt(
         P: *const mpi,
         Q: *const mpi,
@@ -19078,7 +19078,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_validate_params"]
+    #[link_name = "mbedtls_rsa_validate_params"]
     pub fn rsa_validate_params(
         N: *const mpi,
         P: *const mpi,
@@ -19096,7 +19096,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_validate_crt"]
+    #[link_name = "mbedtls_rsa_validate_crt"]
     pub fn rsa_validate_crt(
         P: *const mpi,
         Q: *const mpi,
@@ -19157,23 +19157,23 @@ fn bindgen_test_layout_ripemd160_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_init"]
+    #[link_name = "mbedtls_ripemd160_init"]
     pub fn ripemd160_init(ctx: *mut ripemd160_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_free"]
+    #[link_name = "mbedtls_ripemd160_free"]
     pub fn ripemd160_free(ctx: *mut ripemd160_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_clone"]
+    #[link_name = "mbedtls_ripemd160_clone"]
     pub fn ripemd160_clone(dst: *mut ripemd160_context, src: *const ripemd160_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_starts_ret"]
+    #[link_name = "mbedtls_ripemd160_starts_ret"]
     pub fn ripemd160_starts_ret(ctx: *mut ripemd160_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_update_ret"]
+    #[link_name = "mbedtls_ripemd160_update_ret"]
     pub fn ripemd160_update_ret(
         ctx: *mut ripemd160_context,
         input: *const raw_types::c_uchar,
@@ -19181,25 +19181,25 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_finish_ret"]
+    #[link_name = "mbedtls_ripemd160_finish_ret"]
     pub fn ripemd160_finish_ret(
         ctx: *mut ripemd160_context,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_ripemd160_process"]
+    #[link_name = "mbedtls_internal_ripemd160_process"]
     pub fn internal_ripemd160_process(
         ctx: *mut ripemd160_context,
         data: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_starts"]
+    #[link_name = "mbedtls_ripemd160_starts"]
     pub fn ripemd160_starts(ctx: *mut ripemd160_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_update"]
+    #[link_name = "mbedtls_ripemd160_update"]
     pub fn ripemd160_update(
         ctx: *mut ripemd160_context,
         input: *const raw_types::c_uchar,
@@ -19207,15 +19207,15 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_finish"]
+    #[link_name = "mbedtls_ripemd160_finish"]
     pub fn ripemd160_finish(ctx: *mut ripemd160_context, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_process"]
+    #[link_name = "mbedtls_ripemd160_process"]
     pub fn ripemd160_process(ctx: *mut ripemd160_context, data: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_ret"]
+    #[link_name = "mbedtls_ripemd160_ret"]
     pub fn ripemd160_ret(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -19223,7 +19223,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160"]
+    #[link_name = "mbedtls_ripemd160"]
     pub fn ripemd160(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -19231,7 +19231,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_self_test"]
+    #[link_name = "mbedtls_ripemd160_self_test"]
     pub fn ripemd160_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -19263,15 +19263,15 @@ fn bindgen_test_layout_platform_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_platform_setup"]
+    #[link_name = "mbedtls_platform_setup"]
     pub fn platform_setup(ctx: *mut platform_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_platform_teardown"]
+    #[link_name = "mbedtls_platform_teardown"]
     pub fn platform_teardown(ctx: *mut platform_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pkcs5_pbes2"]
+    #[link_name = "mbedtls_pkcs5_pbes2"]
     pub fn pkcs5_pbes2(
         pbe_params: *const asn1_buf,
         mode: raw_types::c_int,
@@ -19283,7 +19283,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pkcs5_pbkdf2_hmac"]
+    #[link_name = "mbedtls_pkcs5_pbkdf2_hmac"]
     pub fn pkcs5_pbkdf2_hmac(
         ctx: *mut md_context_t,
         password: *const raw_types::c_uchar,
@@ -19296,11 +19296,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pkcs5_self_test"]
+    #[link_name = "mbedtls_pkcs5_self_test"]
     pub fn pkcs5_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pkcs12_pbe_sha1_rc4_128"]
+    #[link_name = "mbedtls_pkcs12_pbe_sha1_rc4_128"]
     pub fn pkcs12_pbe_sha1_rc4_128(
         pbe_params: *mut asn1_buf,
         mode: raw_types::c_int,
@@ -19312,7 +19312,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pkcs12_pbe"]
+    #[link_name = "mbedtls_pkcs12_pbe"]
     pub fn pkcs12_pbe(
         pbe_params: *mut asn1_buf,
         mode: raw_types::c_int,
@@ -19326,7 +19326,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pkcs12_derivation"]
+    #[link_name = "mbedtls_pkcs12_derivation"]
     pub fn pkcs12_derivation(
         data: *mut raw_types::c_uchar,
         datalen: usize,
@@ -19618,23 +19618,23 @@ fn bindgen_test_layout_rsa_alt_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_info"]
+    #[link_name = "mbedtls_rsa_info"]
     pub static rsa_info: pk_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_eckey_info"]
+    #[link_name = "mbedtls_eckey_info"]
     pub static eckey_info: pk_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_eckeydh_info"]
+    #[link_name = "mbedtls_eckeydh_info"]
     pub static eckeydh_info: pk_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ecdsa_info"]
+    #[link_name = "mbedtls_ecdsa_info"]
     pub static ecdsa_info: pk_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_rsa_alt_info"]
+    #[link_name = "mbedtls_rsa_alt_info"]
     pub static rsa_alt_info: pk_info_t;
 }
 #[repr(C)]
@@ -19688,11 +19688,11 @@ fn bindgen_test_layout_pem_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pem_init"]
+    #[link_name = "mbedtls_pem_init"]
     pub fn pem_init(ctx: *mut pem_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pem_read_buffer"]
+    #[link_name = "mbedtls_pem_read_buffer"]
     pub fn pem_read_buffer(
         ctx: *mut pem_context,
         header: *const raw_types::c_char,
@@ -19704,11 +19704,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pem_free"]
+    #[link_name = "mbedtls_pem_free"]
     pub fn pem_free(ctx: *mut pem_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_pem_write_buffer"]
+    #[link_name = "mbedtls_pem_write_buffer"]
     pub fn pem_write_buffer(
         header: *const raw_types::c_char,
         footer: *const raw_types::c_char,
@@ -19781,7 +19781,7 @@ fn bindgen_test_layout_oid_descriptor_t() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_numeric_string"]
+    #[link_name = "mbedtls_oid_get_numeric_string"]
     pub fn oid_get_numeric_string(
         buf: *mut raw_types::c_char,
         size: usize,
@@ -19789,25 +19789,25 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_x509_ext_type"]
+    #[link_name = "mbedtls_oid_get_x509_ext_type"]
     pub fn oid_get_x509_ext_type(
         oid: *const asn1_buf,
         ext_type: *mut raw_types::c_int,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_attr_short_name"]
+    #[link_name = "mbedtls_oid_get_attr_short_name"]
     pub fn oid_get_attr_short_name(
         oid: *const asn1_buf,
         short_name: *mut *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_pk_alg"]
+    #[link_name = "mbedtls_oid_get_pk_alg"]
     pub fn oid_get_pk_alg(oid: *const asn1_buf, pk_alg: *mut pk_type_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_oid_by_pk_alg"]
+    #[link_name = "mbedtls_oid_get_oid_by_pk_alg"]
     pub fn oid_get_oid_by_pk_alg(
         pk_alg: pk_type_t,
         oid: *mut *const raw_types::c_char,
@@ -19815,11 +19815,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_ec_grp"]
+    #[link_name = "mbedtls_oid_get_ec_grp"]
     pub fn oid_get_ec_grp(oid: *const asn1_buf, grp_id: *mut ecp_group_id) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_oid_by_ec_grp"]
+    #[link_name = "mbedtls_oid_get_oid_by_ec_grp"]
     pub fn oid_get_oid_by_ec_grp(
         grp_id: ecp_group_id,
         oid: *mut *const raw_types::c_char,
@@ -19827,7 +19827,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_sig_alg"]
+    #[link_name = "mbedtls_oid_get_sig_alg"]
     pub fn oid_get_sig_alg(
         oid: *const asn1_buf,
         md_alg: *mut md_type_t,
@@ -19835,14 +19835,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_sig_alg_desc"]
+    #[link_name = "mbedtls_oid_get_sig_alg_desc"]
     pub fn oid_get_sig_alg_desc(
         oid: *const asn1_buf,
         desc: *mut *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_oid_by_sig_alg"]
+    #[link_name = "mbedtls_oid_get_oid_by_sig_alg"]
     pub fn oid_get_oid_by_sig_alg(
         pk_alg: pk_type_t,
         md_alg: md_type_t,
@@ -19851,22 +19851,22 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_md_alg"]
+    #[link_name = "mbedtls_oid_get_md_alg"]
     pub fn oid_get_md_alg(oid: *const asn1_buf, md_alg: *mut md_type_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_md_hmac"]
+    #[link_name = "mbedtls_oid_get_md_hmac"]
     pub fn oid_get_md_hmac(oid: *const asn1_buf, md_hmac: *mut md_type_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_extended_key_usage"]
+    #[link_name = "mbedtls_oid_get_extended_key_usage"]
     pub fn oid_get_extended_key_usage(
         oid: *const asn1_buf,
         desc: *mut *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_oid_by_md"]
+    #[link_name = "mbedtls_oid_get_oid_by_md"]
     pub fn oid_get_oid_by_md(
         md_alg: md_type_t,
         oid: *mut *const raw_types::c_char,
@@ -19874,14 +19874,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_cipher_alg"]
+    #[link_name = "mbedtls_oid_get_cipher_alg"]
     pub fn oid_get_cipher_alg(
         oid: *const asn1_buf,
         cipher_alg: *mut cipher_type_t,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_oid_get_pkcs12_pbe_alg"]
+    #[link_name = "mbedtls_oid_get_pkcs12_pbe_alg"]
     pub fn oid_get_pkcs12_pbe_alg(
         oid: *const asn1_buf,
         md_alg: *mut md_type_t,
@@ -19920,11 +19920,11 @@ fn bindgen_test_layout_nist_kw_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_nist_kw_init"]
+    #[link_name = "mbedtls_nist_kw_init"]
     pub fn nist_kw_init(ctx: *mut nist_kw_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_nist_kw_setkey"]
+    #[link_name = "mbedtls_nist_kw_setkey"]
     pub fn nist_kw_setkey(
         ctx: *mut nist_kw_context,
         cipher: cipher_id_t,
@@ -19934,11 +19934,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_nist_kw_free"]
+    #[link_name = "mbedtls_nist_kw_free"]
     pub fn nist_kw_free(ctx: *mut nist_kw_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_nist_kw_wrap"]
+    #[link_name = "mbedtls_nist_kw_wrap"]
     pub fn nist_kw_wrap(
         ctx: *mut nist_kw_context,
         mode: nist_kw_mode_t,
@@ -19950,7 +19950,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_nist_kw_unwrap"]
+    #[link_name = "mbedtls_nist_kw_unwrap"]
     pub fn nist_kw_unwrap(
         ctx: *mut nist_kw_context,
         mode: nist_kw_mode_t,
@@ -19962,27 +19962,27 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_nist_kw_self_test"]
+    #[link_name = "mbedtls_nist_kw_self_test"]
     pub fn nist_kw_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_memory_buffer_alloc_init"]
+    #[link_name = "mbedtls_memory_buffer_alloc_init"]
     pub fn memory_buffer_alloc_init(buf: *mut raw_types::c_uchar, len: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_memory_buffer_alloc_free"]
+    #[link_name = "mbedtls_memory_buffer_alloc_free"]
     pub fn memory_buffer_alloc_free();
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_memory_buffer_set_verify"]
+    #[link_name = "mbedtls_memory_buffer_set_verify"]
     pub fn memory_buffer_set_verify(verify: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_memory_buffer_alloc_verify"]
+    #[link_name = "mbedtls_memory_buffer_alloc_verify"]
     pub fn memory_buffer_alloc_verify() -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_memory_buffer_alloc_self_test"]
+    #[link_name = "mbedtls_memory_buffer_alloc_self_test"]
     pub fn memory_buffer_alloc_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -20161,35 +20161,35 @@ fn bindgen_test_layout_md_info_t() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_info"]
+    #[link_name = "mbedtls_md4_info"]
     pub static md4_info: md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md5_info"]
+    #[link_name = "mbedtls_md5_info"]
     pub static md5_info: md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ripemd160_info"]
+    #[link_name = "mbedtls_ripemd160_info"]
     pub static ripemd160_info: md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha1_info"]
+    #[link_name = "mbedtls_sha1_info"]
     pub static sha1_info: md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha224_info"]
+    #[link_name = "mbedtls_sha224_info"]
     pub static sha224_info: md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha256_info"]
+    #[link_name = "mbedtls_sha256_info"]
     pub static sha256_info: md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha384_info"]
+    #[link_name = "mbedtls_sha384_info"]
     pub static sha384_info: md_info_t;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_sha512_info"]
+    #[link_name = "mbedtls_sha512_info"]
     pub static sha512_info: md_info_t;
 }
 #[repr(C)]
@@ -20243,23 +20243,23 @@ fn bindgen_test_layout_md4_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_init"]
+    #[link_name = "mbedtls_md4_init"]
     pub fn md4_init(ctx: *mut md4_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_free"]
+    #[link_name = "mbedtls_md4_free"]
     pub fn md4_free(ctx: *mut md4_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_clone"]
+    #[link_name = "mbedtls_md4_clone"]
     pub fn md4_clone(dst: *mut md4_context, src: *const md4_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_starts_ret"]
+    #[link_name = "mbedtls_md4_starts_ret"]
     pub fn md4_starts_ret(ctx: *mut md4_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_update_ret"]
+    #[link_name = "mbedtls_md4_update_ret"]
     pub fn md4_update_ret(
         ctx: *mut md4_context,
         input: *const raw_types::c_uchar,
@@ -20267,37 +20267,37 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_finish_ret"]
+    #[link_name = "mbedtls_md4_finish_ret"]
     pub fn md4_finish_ret(
         ctx: *mut md4_context,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_md4_process"]
+    #[link_name = "mbedtls_internal_md4_process"]
     pub fn internal_md4_process(
         ctx: *mut md4_context,
         data: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_starts"]
+    #[link_name = "mbedtls_md4_starts"]
     pub fn md4_starts(ctx: *mut md4_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_update"]
+    #[link_name = "mbedtls_md4_update"]
     pub fn md4_update(ctx: *mut md4_context, input: *const raw_types::c_uchar, ilen: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_finish"]
+    #[link_name = "mbedtls_md4_finish"]
     pub fn md4_finish(ctx: *mut md4_context, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_process"]
+    #[link_name = "mbedtls_md4_process"]
     pub fn md4_process(ctx: *mut md4_context, data: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_ret"]
+    #[link_name = "mbedtls_md4_ret"]
     pub fn md4_ret(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -20305,11 +20305,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4"]
+    #[link_name = "mbedtls_md4"]
     pub fn md4(input: *const raw_types::c_uchar, ilen: usize, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md4_self_test"]
+    #[link_name = "mbedtls_md4_self_test"]
     pub fn md4_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -20374,23 +20374,23 @@ fn bindgen_test_layout_md2_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_init"]
+    #[link_name = "mbedtls_md2_init"]
     pub fn md2_init(ctx: *mut md2_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_free"]
+    #[link_name = "mbedtls_md2_free"]
     pub fn md2_free(ctx: *mut md2_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_clone"]
+    #[link_name = "mbedtls_md2_clone"]
     pub fn md2_clone(dst: *mut md2_context, src: *const md2_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_starts_ret"]
+    #[link_name = "mbedtls_md2_starts_ret"]
     pub fn md2_starts_ret(ctx: *mut md2_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_update_ret"]
+    #[link_name = "mbedtls_md2_update_ret"]
     pub fn md2_update_ret(
         ctx: *mut md2_context,
         input: *const raw_types::c_uchar,
@@ -20398,34 +20398,34 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_finish_ret"]
+    #[link_name = "mbedtls_md2_finish_ret"]
     pub fn md2_finish_ret(
         ctx: *mut md2_context,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_internal_md2_process"]
+    #[link_name = "mbedtls_internal_md2_process"]
     pub fn internal_md2_process(ctx: *mut md2_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_starts"]
+    #[link_name = "mbedtls_md2_starts"]
     pub fn md2_starts(ctx: *mut md2_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_update"]
+    #[link_name = "mbedtls_md2_update"]
     pub fn md2_update(ctx: *mut md2_context, input: *const raw_types::c_uchar, ilen: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_finish"]
+    #[link_name = "mbedtls_md2_finish"]
     pub fn md2_finish(ctx: *mut md2_context, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_process"]
+    #[link_name = "mbedtls_md2_process"]
     pub fn md2_process(ctx: *mut md2_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_ret"]
+    #[link_name = "mbedtls_md2_ret"]
     pub fn md2_ret(
         input: *const raw_types::c_uchar,
         ilen: usize,
@@ -20433,11 +20433,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2"]
+    #[link_name = "mbedtls_md2"]
     pub fn md2(input: *const raw_types::c_uchar, ilen: usize, output: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_md2_self_test"]
+    #[link_name = "mbedtls_md2_self_test"]
     pub fn md2_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -20570,11 +20570,11 @@ fn bindgen_test_layout_hmac_drbg_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_init"]
+    #[link_name = "mbedtls_hmac_drbg_init"]
     pub fn hmac_drbg_init(ctx: *mut hmac_drbg_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_seed"]
+    #[link_name = "mbedtls_hmac_drbg_seed"]
     pub fn hmac_drbg_seed(
         ctx: *mut hmac_drbg_context,
         md_info: *const md_info_t,
@@ -20591,7 +20591,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_seed_buf"]
+    #[link_name = "mbedtls_hmac_drbg_seed_buf"]
     pub fn hmac_drbg_seed_buf(
         ctx: *mut hmac_drbg_context,
         md_info: *const md_info_t,
@@ -20600,22 +20600,22 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_set_prediction_resistance"]
+    #[link_name = "mbedtls_hmac_drbg_set_prediction_resistance"]
     pub fn hmac_drbg_set_prediction_resistance(
         ctx: *mut hmac_drbg_context,
         resistance: raw_types::c_int,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_set_entropy_len"]
+    #[link_name = "mbedtls_hmac_drbg_set_entropy_len"]
     pub fn hmac_drbg_set_entropy_len(ctx: *mut hmac_drbg_context, len: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_set_reseed_interval"]
+    #[link_name = "mbedtls_hmac_drbg_set_reseed_interval"]
     pub fn hmac_drbg_set_reseed_interval(ctx: *mut hmac_drbg_context, interval: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_update_ret"]
+    #[link_name = "mbedtls_hmac_drbg_update_ret"]
     pub fn hmac_drbg_update_ret(
         ctx: *mut hmac_drbg_context,
         additional: *const raw_types::c_uchar,
@@ -20623,7 +20623,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_reseed"]
+    #[link_name = "mbedtls_hmac_drbg_reseed"]
     pub fn hmac_drbg_reseed(
         ctx: *mut hmac_drbg_context,
         additional: *const raw_types::c_uchar,
@@ -20631,7 +20631,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_random_with_add"]
+    #[link_name = "mbedtls_hmac_drbg_random_with_add"]
     pub fn hmac_drbg_random_with_add(
         p_rng: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -20641,7 +20641,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_random"]
+    #[link_name = "mbedtls_hmac_drbg_random"]
     pub fn hmac_drbg_random(
         p_rng: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -20649,11 +20649,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_free"]
+    #[link_name = "mbedtls_hmac_drbg_free"]
     pub fn hmac_drbg_free(ctx: *mut hmac_drbg_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_update"]
+    #[link_name = "mbedtls_hmac_drbg_update"]
     pub fn hmac_drbg_update(
         ctx: *mut hmac_drbg_context,
         additional: *const raw_types::c_uchar,
@@ -20661,25 +20661,25 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_write_seed_file"]
+    #[link_name = "mbedtls_hmac_drbg_write_seed_file"]
     pub fn hmac_drbg_write_seed_file(
         ctx: *mut hmac_drbg_context,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_update_seed_file"]
+    #[link_name = "mbedtls_hmac_drbg_update_seed_file"]
     pub fn hmac_drbg_update_seed_file(
         ctx: *mut hmac_drbg_context,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hmac_drbg_self_test"]
+    #[link_name = "mbedtls_hmac_drbg_self_test"]
     pub fn hmac_drbg_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hkdf"]
+    #[link_name = "mbedtls_hkdf"]
     pub fn hkdf(
         md: *const md_info_t,
         salt: *const raw_types::c_uchar,
@@ -20693,7 +20693,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hkdf_extract"]
+    #[link_name = "mbedtls_hkdf_extract"]
     pub fn hkdf_extract(
         md: *const md_info_t,
         salt: *const raw_types::c_uchar,
@@ -20704,7 +20704,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hkdf_expand"]
+    #[link_name = "mbedtls_hkdf_expand"]
     pub fn hkdf_expand(
         md: *const md_info_t,
         prk: *const raw_types::c_uchar,
@@ -20832,11 +20832,11 @@ fn bindgen_test_layout_gcm_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_init"]
+    #[link_name = "mbedtls_gcm_init"]
     pub fn gcm_init(ctx: *mut gcm_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_setkey"]
+    #[link_name = "mbedtls_gcm_setkey"]
     pub fn gcm_setkey(
         ctx: *mut gcm_context,
         cipher: cipher_id_t,
@@ -20845,7 +20845,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_crypt_and_tag"]
+    #[link_name = "mbedtls_gcm_crypt_and_tag"]
     pub fn gcm_crypt_and_tag(
         ctx: *mut gcm_context,
         mode: raw_types::c_int,
@@ -20861,7 +20861,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_auth_decrypt"]
+    #[link_name = "mbedtls_gcm_auth_decrypt"]
     pub fn gcm_auth_decrypt(
         ctx: *mut gcm_context,
         length: usize,
@@ -20876,7 +20876,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_starts"]
+    #[link_name = "mbedtls_gcm_starts"]
     pub fn gcm_starts(
         ctx: *mut gcm_context,
         mode: raw_types::c_int,
@@ -20887,7 +20887,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_update"]
+    #[link_name = "mbedtls_gcm_update"]
     pub fn gcm_update(
         ctx: *mut gcm_context,
         length: usize,
@@ -20896,7 +20896,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_finish"]
+    #[link_name = "mbedtls_gcm_finish"]
     pub fn gcm_finish(
         ctx: *mut gcm_context,
         tag: *mut raw_types::c_uchar,
@@ -20904,19 +20904,19 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_free"]
+    #[link_name = "mbedtls_gcm_free"]
     pub fn gcm_free(ctx: *mut gcm_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_gcm_self_test"]
+    #[link_name = "mbedtls_gcm_self_test"]
     pub fn gcm_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_strerror"]
+    #[link_name = "mbedtls_strerror"]
     pub fn strerror(errnum: raw_types::c_int, buffer: *mut raw_types::c_char, buflen: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_platform_entropy_poll"]
+    #[link_name = "mbedtls_platform_entropy_poll"]
     pub fn platform_entropy_poll(
         data: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -20925,7 +20925,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_havege_poll"]
+    #[link_name = "mbedtls_havege_poll"]
     pub fn havege_poll(
         data: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -20934,7 +20934,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_hardclock_poll"]
+    #[link_name = "mbedtls_hardclock_poll"]
     pub fn hardclock_poll(
         data: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -21108,15 +21108,15 @@ fn bindgen_test_layout_entropy_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_init"]
+    #[link_name = "mbedtls_entropy_init"]
     pub fn entropy_init(ctx: *mut entropy_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_free"]
+    #[link_name = "mbedtls_entropy_free"]
     pub fn entropy_free(ctx: *mut entropy_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_add_source"]
+    #[link_name = "mbedtls_entropy_add_source"]
     pub fn entropy_add_source(
         ctx: *mut entropy_context,
         f_source: entropy_f_source_ptr,
@@ -21126,11 +21126,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_gather"]
+    #[link_name = "mbedtls_entropy_gather"]
     pub fn entropy_gather(ctx: *mut entropy_context) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_func"]
+    #[link_name = "mbedtls_entropy_func"]
     pub fn entropy_func(
         data: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -21138,7 +21138,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_update_manual"]
+    #[link_name = "mbedtls_entropy_update_manual"]
     pub fn entropy_update_manual(
         ctx: *mut entropy_context,
         data: *const raw_types::c_uchar,
@@ -21146,21 +21146,21 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_write_seed_file"]
+    #[link_name = "mbedtls_entropy_write_seed_file"]
     pub fn entropy_write_seed_file(
         ctx: *mut entropy_context,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_update_seed_file"]
+    #[link_name = "mbedtls_entropy_update_seed_file"]
     pub fn entropy_update_seed_file(
         ctx: *mut entropy_context,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_entropy_self_test"]
+    #[link_name = "mbedtls_entropy_self_test"]
     pub fn entropy_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -21220,77 +21220,77 @@ fn bindgen_test_layout_des3_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_init"]
+    #[link_name = "mbedtls_des_init"]
     pub fn des_init(ctx: *mut des_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_free"]
+    #[link_name = "mbedtls_des_free"]
     pub fn des_free(ctx: *mut des_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des3_init"]
+    #[link_name = "mbedtls_des3_init"]
     pub fn des3_init(ctx: *mut des3_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des3_free"]
+    #[link_name = "mbedtls_des3_free"]
     pub fn des3_free(ctx: *mut des3_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_key_set_parity"]
+    #[link_name = "mbedtls_des_key_set_parity"]
     pub fn des_key_set_parity(key: *mut raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_key_check_key_parity"]
+    #[link_name = "mbedtls_des_key_check_key_parity"]
     pub fn des_key_check_key_parity(key: *const raw_types::c_uchar) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_key_check_weak"]
+    #[link_name = "mbedtls_des_key_check_weak"]
     pub fn des_key_check_weak(key: *const raw_types::c_uchar) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_setkey_enc"]
+    #[link_name = "mbedtls_des_setkey_enc"]
     pub fn des_setkey_enc(
         ctx: *mut des_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_setkey_dec"]
+    #[link_name = "mbedtls_des_setkey_dec"]
     pub fn des_setkey_dec(
         ctx: *mut des_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des3_set2key_enc"]
+    #[link_name = "mbedtls_des3_set2key_enc"]
     pub fn des3_set2key_enc(
         ctx: *mut des3_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des3_set2key_dec"]
+    #[link_name = "mbedtls_des3_set2key_dec"]
     pub fn des3_set2key_dec(
         ctx: *mut des3_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des3_set3key_enc"]
+    #[link_name = "mbedtls_des3_set3key_enc"]
     pub fn des3_set3key_enc(
         ctx: *mut des3_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des3_set3key_dec"]
+    #[link_name = "mbedtls_des3_set3key_dec"]
     pub fn des3_set3key_dec(
         ctx: *mut des3_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_crypt_ecb"]
+    #[link_name = "mbedtls_des_crypt_ecb"]
     pub fn des_crypt_ecb(
         ctx: *mut des_context,
         input: *const raw_types::c_uchar,
@@ -21298,7 +21298,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_crypt_cbc"]
+    #[link_name = "mbedtls_des_crypt_cbc"]
     pub fn des_crypt_cbc(
         ctx: *mut des_context,
         mode: raw_types::c_int,
@@ -21309,7 +21309,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des3_crypt_ecb"]
+    #[link_name = "mbedtls_des3_crypt_ecb"]
     pub fn des3_crypt_ecb(
         ctx: *mut des3_context,
         input: *const raw_types::c_uchar,
@@ -21317,7 +21317,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des3_crypt_cbc"]
+    #[link_name = "mbedtls_des3_crypt_cbc"]
     pub fn des3_crypt_cbc(
         ctx: *mut des3_context,
         mode: raw_types::c_int,
@@ -21328,19 +21328,19 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_setkey"]
+    #[link_name = "mbedtls_des_setkey"]
     pub fn des_setkey(SK: *mut u32, key: *const raw_types::c_uchar);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_des_self_test"]
+    #[link_name = "mbedtls_des_self_test"]
     pub fn des_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_debug_set_threshold"]
+    #[link_name = "mbedtls_debug_set_threshold"]
     pub fn debug_set_threshold(threshold: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_debug_print_msg"]
+    #[link_name = "mbedtls_debug_print_msg"]
     pub fn debug_print_msg(
         ssl: *const ssl_context,
         level: raw_types::c_int,
@@ -21351,7 +21351,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_debug_print_ret"]
+    #[link_name = "mbedtls_debug_print_ret"]
     pub fn debug_print_ret(
         ssl: *const ssl_context,
         level: raw_types::c_int,
@@ -21362,7 +21362,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_debug_print_buf"]
+    #[link_name = "mbedtls_debug_print_buf"]
     pub fn debug_print_buf(
         ssl: *const ssl_context,
         level: raw_types::c_int,
@@ -21374,7 +21374,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_debug_print_mpi"]
+    #[link_name = "mbedtls_debug_print_mpi"]
     pub fn debug_print_mpi(
         ssl: *const ssl_context,
         level: raw_types::c_int,
@@ -21385,7 +21385,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_debug_print_ecp"]
+    #[link_name = "mbedtls_debug_print_ecp"]
     pub fn debug_print_ecp(
         ssl: *const ssl_context,
         level: raw_types::c_int,
@@ -21396,7 +21396,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_debug_print_crt"]
+    #[link_name = "mbedtls_debug_print_crt"]
     pub fn debug_print_crt(
         ssl: *const ssl_context,
         level: raw_types::c_int,
@@ -21411,7 +21411,7 @@ pub const DEBUG_ECDH_QP: debug_ecdh_attr = 1;
 pub const DEBUG_ECDH_Z: debug_ecdh_attr = 2;
 pub type debug_ecdh_attr = u32;
 extern "C" {
-    #[link_name = "\u{1}mbedtls_debug_printf_ecdh"]
+    #[link_name = "mbedtls_debug_printf_ecdh"]
     pub fn debug_printf_ecdh(
         ssl: *const ssl_context,
         level: raw_types::c_int,
@@ -21550,11 +21550,11 @@ fn bindgen_test_layout_ctr_drbg_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_init"]
+    #[link_name = "mbedtls_ctr_drbg_init"]
     pub fn ctr_drbg_init(ctx: *mut ctr_drbg_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_seed"]
+    #[link_name = "mbedtls_ctr_drbg_seed"]
     pub fn ctr_drbg_seed(
         ctx: *mut ctr_drbg_context,
         f_entropy: ::core::option::Option<
@@ -21570,26 +21570,26 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_free"]
+    #[link_name = "mbedtls_ctr_drbg_free"]
     pub fn ctr_drbg_free(ctx: *mut ctr_drbg_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_set_prediction_resistance"]
+    #[link_name = "mbedtls_ctr_drbg_set_prediction_resistance"]
     pub fn ctr_drbg_set_prediction_resistance(
         ctx: *mut ctr_drbg_context,
         resistance: raw_types::c_int,
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_set_entropy_len"]
+    #[link_name = "mbedtls_ctr_drbg_set_entropy_len"]
     pub fn ctr_drbg_set_entropy_len(ctx: *mut ctr_drbg_context, len: usize);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_set_reseed_interval"]
+    #[link_name = "mbedtls_ctr_drbg_set_reseed_interval"]
     pub fn ctr_drbg_set_reseed_interval(ctx: *mut ctr_drbg_context, interval: raw_types::c_int);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_reseed"]
+    #[link_name = "mbedtls_ctr_drbg_reseed"]
     pub fn ctr_drbg_reseed(
         ctx: *mut ctr_drbg_context,
         additional: *const raw_types::c_uchar,
@@ -21597,7 +21597,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_update_ret"]
+    #[link_name = "mbedtls_ctr_drbg_update_ret"]
     pub fn ctr_drbg_update_ret(
         ctx: *mut ctr_drbg_context,
         additional: *const raw_types::c_uchar,
@@ -21605,7 +21605,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_random_with_add"]
+    #[link_name = "mbedtls_ctr_drbg_random_with_add"]
     pub fn ctr_drbg_random_with_add(
         p_rng: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -21615,7 +21615,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_random"]
+    #[link_name = "mbedtls_ctr_drbg_random"]
     pub fn ctr_drbg_random(
         p_rng: *mut raw_types::c_void,
         output: *mut raw_types::c_uchar,
@@ -21623,7 +21623,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_update"]
+    #[link_name = "mbedtls_ctr_drbg_update"]
     pub fn ctr_drbg_update(
         ctx: *mut ctr_drbg_context,
         additional: *const raw_types::c_uchar,
@@ -21631,25 +21631,25 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_write_seed_file"]
+    #[link_name = "mbedtls_ctr_drbg_write_seed_file"]
     pub fn ctr_drbg_write_seed_file(
         ctx: *mut ctr_drbg_context,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_update_seed_file"]
+    #[link_name = "mbedtls_ctr_drbg_update_seed_file"]
     pub fn ctr_drbg_update_seed_file(
         ctx: *mut ctr_drbg_context,
         path: *const raw_types::c_char,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_self_test"]
+    #[link_name = "mbedtls_ctr_drbg_self_test"]
     pub fn ctr_drbg_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ctr_drbg_seed_entropy_len"]
+    #[link_name = "mbedtls_ctr_drbg_seed_entropy_len"]
     pub fn ctr_drbg_seed_entropy_len(
         arg1: *mut ctr_drbg_context,
         arg2: ::core::option::Option<
@@ -21718,7 +21718,7 @@ fn bindgen_test_layout_cmac_context_t() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_cmac_starts"]
+    #[link_name = "mbedtls_cipher_cmac_starts"]
     pub fn cipher_cmac_starts(
         ctx: *mut cipher_context_t,
         key: *const raw_types::c_uchar,
@@ -21726,7 +21726,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_cmac_update"]
+    #[link_name = "mbedtls_cipher_cmac_update"]
     pub fn cipher_cmac_update(
         ctx: *mut cipher_context_t,
         input: *const raw_types::c_uchar,
@@ -21734,18 +21734,18 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_cmac_finish"]
+    #[link_name = "mbedtls_cipher_cmac_finish"]
     pub fn cipher_cmac_finish(
         ctx: *mut cipher_context_t,
         output: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_cmac_reset"]
+    #[link_name = "mbedtls_cipher_cmac_reset"]
     pub fn cipher_cmac_reset(ctx: *mut cipher_context_t) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_cmac"]
+    #[link_name = "mbedtls_cipher_cmac"]
     pub fn cipher_cmac(
         cipher_info: *const cipher_info_t,
         key: *const raw_types::c_uchar,
@@ -21756,7 +21756,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aes_cmac_prf_128"]
+    #[link_name = "mbedtls_aes_cmac_prf_128"]
     pub fn aes_cmac_prf_128(
         key: *const raw_types::c_uchar,
         key_len: usize,
@@ -21766,7 +21766,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cmac_self_test"]
+    #[link_name = "mbedtls_cmac_self_test"]
     pub fn cmac_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -22031,11 +22031,11 @@ fn bindgen_test_layout_cipher_definition_t() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_definitions"]
+    #[link_name = "mbedtls_cipher_definitions"]
     pub static mut cipher_definitions: [cipher_definition_t; 0usize];
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_cipher_supported"]
+    #[link_name = "mbedtls_cipher_supported"]
     pub static mut cipher_supported: [raw_types::c_int; 0usize];
 }
 pub const CHACHAPOLY_ENCRYPT: chachapoly_mode_t = 0;
@@ -22131,22 +22131,22 @@ fn bindgen_test_layout_chachapoly_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_init"]
+    #[link_name = "mbedtls_chachapoly_init"]
     pub fn chachapoly_init(ctx: *mut chachapoly_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_free"]
+    #[link_name = "mbedtls_chachapoly_free"]
     pub fn chachapoly_free(ctx: *mut chachapoly_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_setkey"]
+    #[link_name = "mbedtls_chachapoly_setkey"]
     pub fn chachapoly_setkey(
         ctx: *mut chachapoly_context,
         key: *const raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_starts"]
+    #[link_name = "mbedtls_chachapoly_starts"]
     pub fn chachapoly_starts(
         ctx: *mut chachapoly_context,
         nonce: *const raw_types::c_uchar,
@@ -22154,7 +22154,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_update_aad"]
+    #[link_name = "mbedtls_chachapoly_update_aad"]
     pub fn chachapoly_update_aad(
         ctx: *mut chachapoly_context,
         aad: *const raw_types::c_uchar,
@@ -22162,7 +22162,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_update"]
+    #[link_name = "mbedtls_chachapoly_update"]
     pub fn chachapoly_update(
         ctx: *mut chachapoly_context,
         len: usize,
@@ -22171,14 +22171,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_finish"]
+    #[link_name = "mbedtls_chachapoly_finish"]
     pub fn chachapoly_finish(
         ctx: *mut chachapoly_context,
         mac: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_encrypt_and_tag"]
+    #[link_name = "mbedtls_chachapoly_encrypt_and_tag"]
     pub fn chachapoly_encrypt_and_tag(
         ctx: *mut chachapoly_context,
         length: usize,
@@ -22191,7 +22191,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_auth_decrypt"]
+    #[link_name = "mbedtls_chachapoly_auth_decrypt"]
     pub fn chachapoly_auth_decrypt(
         ctx: *mut chachapoly_context,
         length: usize,
@@ -22204,7 +22204,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_chachapoly_self_test"]
+    #[link_name = "mbedtls_chachapoly_self_test"]
     pub fn chachapoly_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -22236,11 +22236,11 @@ fn bindgen_test_layout_ccm_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ccm_init"]
+    #[link_name = "mbedtls_ccm_init"]
     pub fn ccm_init(ctx: *mut ccm_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ccm_setkey"]
+    #[link_name = "mbedtls_ccm_setkey"]
     pub fn ccm_setkey(
         ctx: *mut ccm_context,
         cipher: cipher_id_t,
@@ -22249,11 +22249,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ccm_free"]
+    #[link_name = "mbedtls_ccm_free"]
     pub fn ccm_free(ctx: *mut ccm_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ccm_encrypt_and_tag"]
+    #[link_name = "mbedtls_ccm_encrypt_and_tag"]
     pub fn ccm_encrypt_and_tag(
         ctx: *mut ccm_context,
         length: usize,
@@ -22268,7 +22268,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ccm_star_encrypt_and_tag"]
+    #[link_name = "mbedtls_ccm_star_encrypt_and_tag"]
     pub fn ccm_star_encrypt_and_tag(
         ctx: *mut ccm_context,
         length: usize,
@@ -22283,7 +22283,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ccm_auth_decrypt"]
+    #[link_name = "mbedtls_ccm_auth_decrypt"]
     pub fn ccm_auth_decrypt(
         ctx: *mut ccm_context,
         length: usize,
@@ -22298,7 +22298,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ccm_star_auth_decrypt"]
+    #[link_name = "mbedtls_ccm_star_auth_decrypt"]
     pub fn ccm_star_auth_decrypt(
         ctx: *mut ccm_context,
         length: usize,
@@ -22313,7 +22313,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_ccm_self_test"]
+    #[link_name = "mbedtls_ccm_self_test"]
     pub fn ccm_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -22356,15 +22356,15 @@ fn bindgen_test_layout_camellia_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_init"]
+    #[link_name = "mbedtls_camellia_init"]
     pub fn camellia_init(ctx: *mut camellia_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_free"]
+    #[link_name = "mbedtls_camellia_free"]
     pub fn camellia_free(ctx: *mut camellia_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_setkey_enc"]
+    #[link_name = "mbedtls_camellia_setkey_enc"]
     pub fn camellia_setkey_enc(
         ctx: *mut camellia_context,
         key: *const raw_types::c_uchar,
@@ -22372,7 +22372,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_setkey_dec"]
+    #[link_name = "mbedtls_camellia_setkey_dec"]
     pub fn camellia_setkey_dec(
         ctx: *mut camellia_context,
         key: *const raw_types::c_uchar,
@@ -22380,7 +22380,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_crypt_ecb"]
+    #[link_name = "mbedtls_camellia_crypt_ecb"]
     pub fn camellia_crypt_ecb(
         ctx: *mut camellia_context,
         mode: raw_types::c_int,
@@ -22389,7 +22389,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_crypt_cbc"]
+    #[link_name = "mbedtls_camellia_crypt_cbc"]
     pub fn camellia_crypt_cbc(
         ctx: *mut camellia_context,
         mode: raw_types::c_int,
@@ -22400,7 +22400,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_crypt_cfb128"]
+    #[link_name = "mbedtls_camellia_crypt_cfb128"]
     pub fn camellia_crypt_cfb128(
         ctx: *mut camellia_context,
         mode: raw_types::c_int,
@@ -22412,7 +22412,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_crypt_ctr"]
+    #[link_name = "mbedtls_camellia_crypt_ctr"]
     pub fn camellia_crypt_ctr(
         ctx: *mut camellia_context,
         length: usize,
@@ -22424,7 +22424,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_camellia_self_test"]
+    #[link_name = "mbedtls_camellia_self_test"]
     pub fn camellia_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -22467,15 +22467,15 @@ fn bindgen_test_layout_blowfish_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_blowfish_init"]
+    #[link_name = "mbedtls_blowfish_init"]
     pub fn blowfish_init(ctx: *mut blowfish_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_blowfish_free"]
+    #[link_name = "mbedtls_blowfish_free"]
     pub fn blowfish_free(ctx: *mut blowfish_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_blowfish_setkey"]
+    #[link_name = "mbedtls_blowfish_setkey"]
     pub fn blowfish_setkey(
         ctx: *mut blowfish_context,
         key: *const raw_types::c_uchar,
@@ -22483,7 +22483,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_blowfish_crypt_ecb"]
+    #[link_name = "mbedtls_blowfish_crypt_ecb"]
     pub fn blowfish_crypt_ecb(
         ctx: *mut blowfish_context,
         mode: raw_types::c_int,
@@ -22492,7 +22492,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_blowfish_crypt_cbc"]
+    #[link_name = "mbedtls_blowfish_crypt_cbc"]
     pub fn blowfish_crypt_cbc(
         ctx: *mut blowfish_context,
         mode: raw_types::c_int,
@@ -22503,7 +22503,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_blowfish_crypt_cfb64"]
+    #[link_name = "mbedtls_blowfish_crypt_cfb64"]
     pub fn blowfish_crypt_cfb64(
         ctx: *mut blowfish_context,
         mode: raw_types::c_int,
@@ -22515,7 +22515,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_blowfish_crypt_ctr"]
+    #[link_name = "mbedtls_blowfish_crypt_ctr"]
     pub fn blowfish_crypt_ctr(
         ctx: *mut blowfish_context,
         length: usize,
@@ -22527,7 +22527,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_base64_encode"]
+    #[link_name = "mbedtls_base64_encode"]
     pub fn base64_encode(
         dst: *mut raw_types::c_uchar,
         dlen: usize,
@@ -22537,7 +22537,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_base64_decode"]
+    #[link_name = "mbedtls_base64_decode"]
     pub fn base64_decode(
         dst: *mut raw_types::c_uchar,
         dlen: usize,
@@ -22547,11 +22547,11 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_base64_self_test"]
+    #[link_name = "mbedtls_base64_self_test"]
     pub fn base64_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_len"]
+    #[link_name = "mbedtls_asn1_write_len"]
     pub fn asn1_write_len(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22559,7 +22559,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_tag"]
+    #[link_name = "mbedtls_asn1_write_tag"]
     pub fn asn1_write_tag(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22567,7 +22567,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_raw_buffer"]
+    #[link_name = "mbedtls_asn1_write_raw_buffer"]
     pub fn asn1_write_raw_buffer(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22576,7 +22576,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_mpi"]
+    #[link_name = "mbedtls_asn1_write_mpi"]
     pub fn asn1_write_mpi(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22584,14 +22584,14 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_null"]
+    #[link_name = "mbedtls_asn1_write_null"]
     pub fn asn1_write_null(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_oid"]
+    #[link_name = "mbedtls_asn1_write_oid"]
     pub fn asn1_write_oid(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22600,7 +22600,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_algorithm_identifier"]
+    #[link_name = "mbedtls_asn1_write_algorithm_identifier"]
     pub fn asn1_write_algorithm_identifier(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22610,7 +22610,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_bool"]
+    #[link_name = "mbedtls_asn1_write_bool"]
     pub fn asn1_write_bool(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22618,7 +22618,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_int"]
+    #[link_name = "mbedtls_asn1_write_int"]
     pub fn asn1_write_int(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22626,7 +22626,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_tagged_string"]
+    #[link_name = "mbedtls_asn1_write_tagged_string"]
     pub fn asn1_write_tagged_string(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22636,7 +22636,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_printable_string"]
+    #[link_name = "mbedtls_asn1_write_printable_string"]
     pub fn asn1_write_printable_string(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22645,7 +22645,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_utf8_string"]
+    #[link_name = "mbedtls_asn1_write_utf8_string"]
     pub fn asn1_write_utf8_string(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22654,7 +22654,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_ia5_string"]
+    #[link_name = "mbedtls_asn1_write_ia5_string"]
     pub fn asn1_write_ia5_string(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22663,7 +22663,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_bitstring"]
+    #[link_name = "mbedtls_asn1_write_bitstring"]
     pub fn asn1_write_bitstring(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22672,7 +22672,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_write_octet_string"]
+    #[link_name = "mbedtls_asn1_write_octet_string"]
     pub fn asn1_write_octet_string(
         p: *mut *mut raw_types::c_uchar,
         start: *mut raw_types::c_uchar,
@@ -22681,7 +22681,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_asn1_store_named_data"]
+    #[link_name = "mbedtls_asn1_store_named_data"]
     pub fn asn1_store_named_data(
         list: *mut *mut asn1_named_data,
         oid: *const raw_types::c_char,
@@ -22730,15 +22730,15 @@ fn bindgen_test_layout_aria_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_init"]
+    #[link_name = "mbedtls_aria_init"]
     pub fn aria_init(ctx: *mut aria_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_free"]
+    #[link_name = "mbedtls_aria_free"]
     pub fn aria_free(ctx: *mut aria_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_setkey_enc"]
+    #[link_name = "mbedtls_aria_setkey_enc"]
     pub fn aria_setkey_enc(
         ctx: *mut aria_context,
         key: *const raw_types::c_uchar,
@@ -22746,7 +22746,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_setkey_dec"]
+    #[link_name = "mbedtls_aria_setkey_dec"]
     pub fn aria_setkey_dec(
         ctx: *mut aria_context,
         key: *const raw_types::c_uchar,
@@ -22754,7 +22754,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_crypt_ecb"]
+    #[link_name = "mbedtls_aria_crypt_ecb"]
     pub fn aria_crypt_ecb(
         ctx: *mut aria_context,
         input: *const raw_types::c_uchar,
@@ -22762,7 +22762,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_crypt_cbc"]
+    #[link_name = "mbedtls_aria_crypt_cbc"]
     pub fn aria_crypt_cbc(
         ctx: *mut aria_context,
         mode: raw_types::c_int,
@@ -22773,7 +22773,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_crypt_cfb128"]
+    #[link_name = "mbedtls_aria_crypt_cfb128"]
     pub fn aria_crypt_cfb128(
         ctx: *mut aria_context,
         mode: raw_types::c_int,
@@ -22785,7 +22785,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_crypt_ctr"]
+    #[link_name = "mbedtls_aria_crypt_ctr"]
     pub fn aria_crypt_ctr(
         ctx: *mut aria_context,
         length: usize,
@@ -22797,7 +22797,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aria_self_test"]
+    #[link_name = "mbedtls_aria_self_test"]
     pub fn aria_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 #[repr(C)]
@@ -22851,15 +22851,15 @@ fn bindgen_test_layout_arc4_context() {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_arc4_init"]
+    #[link_name = "mbedtls_arc4_init"]
     pub fn arc4_init(ctx: *mut arc4_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_arc4_free"]
+    #[link_name = "mbedtls_arc4_free"]
     pub fn arc4_free(ctx: *mut arc4_context);
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_arc4_setup"]
+    #[link_name = "mbedtls_arc4_setup"]
     pub fn arc4_setup(
         ctx: *mut arc4_context,
         key: *const raw_types::c_uchar,
@@ -22867,7 +22867,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_arc4_crypt"]
+    #[link_name = "mbedtls_arc4_crypt"]
     pub fn arc4_crypt(
         ctx: *mut arc4_context,
         length: usize,
@@ -22876,15 +22876,15 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_arc4_self_test"]
+    #[link_name = "mbedtls_arc4_self_test"]
     pub fn arc4_self_test(verbose: raw_types::c_int) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aesni_has_support"]
+    #[link_name = "mbedtls_aesni_has_support"]
     pub fn aesni_has_support(what: raw_types::c_uint) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aesni_crypt_ecb"]
+    #[link_name = "mbedtls_aesni_crypt_ecb"]
     pub fn aesni_crypt_ecb(
         ctx: *mut aes_context,
         mode: raw_types::c_int,
@@ -22893,7 +22893,7 @@ extern "C" {
     ) -> raw_types::c_int;
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aesni_gcm_mult"]
+    #[link_name = "mbedtls_aesni_gcm_mult"]
     pub fn aesni_gcm_mult(
         c: *mut raw_types::c_uchar,
         a: *const raw_types::c_uchar,
@@ -22901,7 +22901,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aesni_inverse_key"]
+    #[link_name = "mbedtls_aesni_inverse_key"]
     pub fn aesni_inverse_key(
         invkey: *mut raw_types::c_uchar,
         fwdkey: *const raw_types::c_uchar,
@@ -22909,7 +22909,7 @@ extern "C" {
     );
 }
 extern "C" {
-    #[link_name = "\u{1}mbedtls_aesni_setkey_enc"]
+    #[link_name = "mbedtls_aesni_setkey_enc"]
     pub fn aesni_setkey_enc(
         rk: *mut raw_types::c_uchar,
         key: *const raw_types::c_uchar,
