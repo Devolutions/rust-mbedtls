@@ -134,16 +134,18 @@ fn main() {
         return;
     }
 
-    let out_dir = PathBuf::from(env::var_os("OUT_DIR").expect("OUT_DIR environment not set?"));
-    let src = PathBuf::from(env::var("RUST_MBEDTLS_SYS_SOURCE").unwrap_or("vendor".to_owned()));
-    let cfg = BuildConfig {
-        config_h: out_dir.join("config.h"),
-        out_dir: out_dir,
-        mbedtls_src: src,
-    };
+    if let Ok(_) = env::var("CARGO_FEATURE_RUST_BINDGEN") {
+        let out_dir = PathBuf::from(env::var_os("OUT_DIR").expect("OUT_DIR environment not set?"));
+        let src = PathBuf::from(env::var("RUST_MBEDTLS_SYS_SOURCE").unwrap_or("vendor".to_owned()));
+        let cfg = BuildConfig {
+            config_h: out_dir.join("config.h"),
+            out_dir: out_dir,
+            mbedtls_src: src,
+        };
 
-    cfg.create_config_h();
-    cfg.print_rerun_files();
-    cfg.cmake();
-    cfg.bindgen();
+        cfg.create_config_h();
+        cfg.print_rerun_files();
+        cfg.cmake();
+        cfg.bindgen();
+    }
 }

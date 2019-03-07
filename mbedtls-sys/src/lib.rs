@@ -11,6 +11,11 @@
 extern crate core;
 
 pub mod types;
+
+#[cfg(feature = "rust-bindgen")]
 include!(concat!(env!("OUT_DIR"), "/mod-bindings.rs"));
+
+#[cfg(not(feature = "rust-bindgen"))]
+include!("../bindings/mod-bindings.rs");
 
 pub use bindings::*;
