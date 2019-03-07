@@ -5723,6 +5723,7 @@ crt_verify:
         rs_ctx = &ssl->handshake->ecrs_ctx;
 #endif
 
+
     if( authmode != MBEDTLS_SSL_VERIFY_NONE )
     {
         mbedtls_x509_crt *ca_chain;
@@ -5744,13 +5745,24 @@ crt_verify:
         /*
          * Main check: verify certificate
          */
-        ret = mbedtls_x509_crt_verify_restartable(
+
+        if( authmode == MBEDTLS_SSL_VERIFY_EXTERNAL )
+        {
+            if( NULL != ssl->conf->f_vrfy )
+            {
+                ret = ssl->conf->f_vrfy( ssl->conf->p_vrfy, ssl->session_negotiate->peer_cert, -1, &ssl->session_negotiate->verify_result );
+            }
+        }
+        else
+        {
+            ret = mbedtls_x509_crt_verify_restartable(
                                 ssl->session_negotiate->peer_cert,
                                 ca_chain, ca_crl,
                                 ssl->conf->cert_profile,
                                 ssl->hostname,
                                &ssl->session_negotiate->verify_result,
                                 ssl->conf->f_vrfy, ssl->conf->p_vrfy, rs_ctx );
+        }
 
         if( ret != 0 )
         {
@@ -6838,6 +6850,10 @@ static void ssl_update_in_pointers( mbedtls_ssl_context *ssl,
 void mbedtls_ssl_init( mbedtls_ssl_context *ssl )
 {
     memset( ssl, 0, sizeof( mbedtls_ssl_context ) );
+
+#if defined(MBEDTLS_THREADING_C)
+    mbedtls_mutex_init( &ssl->out_mutex );
+#endif
 }
 
 /*
@@ -8272,8 +8288,18 @@ int mbedtls_ssl_read( mbedtls_ssl_context *ssl, unsigned char *buf, size_t len )
 #if defined(MBEDTLS_SSL_PROTO_DTLS)
     if( ssl->conf->transport == MBEDTLS_SSL_TRANSPORT_DATAGRAM )
     {
-        if( ( ret = mbedtls_ssl_flush_output( ssl ) ) != 0 )
-            return( ret );
+#if defined(MBEDTLS_THREADING_C)
+        if( mbedtls_threading_trylock && ( mbedtls_mutex_trylock( &ssl->out_mutex ) == 0 ) )
+        {
+#endif
+            if( ( ret = mbedtls_ssl_flush_output( ssl ) ) != 0 )
+                return( ret );
+
+#if defined(MBEDTLS_THREADING_C)
+            if( ( ret = mbedtls_mutex_unlock( &ssl->out_mutex ) ) != 0 )
+                return( ret );
+        }
+#endif
 
         if( ssl->handshake != NULL &&
             ssl->handshake->retransmit_state == MBEDTLS_SSL_RETRANS_SENDING )
@@ -8599,6 +8625,11 @@ static int ssl_write_real( mbedtls_ssl_context *ssl,
             len = max_len;
     }
 
+#if defined(MBEDTLS_THREADING_C)
+    if( ( ret = mbedtls_mutex_lock( &ssl->out_mutex ) ) != 0 )
+        return( ret );
+#endif
+
     if( ssl->out_left != 0 )
     {
         /*
@@ -8610,7 +8641,7 @@ static int ssl_write_real( mbedtls_ssl_context *ssl,
         if( ( ret = mbedtls_ssl_flush_output( ssl ) ) != 0 )
         {
             MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_ssl_flush_output", ret );
-            return( ret );
+            goto exit_unlock;
         }
     }
     else
@@ -8627,11 +8658,22 @@ static int ssl_write_real( mbedtls_ssl_context *ssl,
         if( ( ret = mbedtls_ssl_write_record( ssl, SSL_FORCE_FLUSH ) ) != 0 )
         {
             MBEDTLS_SSL_DEBUG_RET( 1, "mbedtls_ssl_write_record", ret );
-            return( ret );
+            goto exit_unlock;
         }
     }
 
+#if defined(MBEDTLS_THREADING_C)
+    if( ( ret = mbedtls_mutex_unlock( &ssl->out_mutex ) ) != 0 )
+        return( ret );
+#endif
+
     return( (int) len );
+
+exit_unlock:
+#if defined(MBEDTLS_THREADING_C)
+    mbedtls_mutex_unlock( &ssl->out_mutex );
+#endif
+    return( ret );
 }
 
 /*
@@ -8994,6 +9036,10 @@ void mbedtls_ssl_free( mbedtls_ssl_context *ssl )
 
 #if defined(MBEDTLS_SSL_DTLS_HELLO_VERIFY) && defined(MBEDTLS_SSL_SRV_C)
     mbedtls_free( ssl->cli_id );
+#endif
+
+#if defined(MBEDTLS_THREADING_C)
+    mbedtls_mutex_free( &ssl->out_mutex );
 #endif
 
     MBEDTLS_SSL_DEBUG_MSG( 2, ( "<= free" ) );

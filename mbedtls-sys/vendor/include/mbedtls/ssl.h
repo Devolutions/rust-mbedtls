@@ -65,6 +65,10 @@
 #include "platform_time.h"
 #endif
 
+#if defined(MBEDTLS_THREADING_C)
+#include "threading.h"
+#endif
+
 /*
  * SSL Error codes
  */
@@ -166,6 +170,7 @@
 #define MBEDTLS_SSL_VERIFY_OPTIONAL             1
 #define MBEDTLS_SSL_VERIFY_REQUIRED             2
 #define MBEDTLS_SSL_VERIFY_UNSET                3 /* Used only for sni_authmode */
+#define MBEDTLS_SSL_VERIFY_EXTERNAL             4
 
 #define MBEDTLS_SSL_LEGACY_RENEGOTIATION        0
 #define MBEDTLS_SSL_SECURE_RENEGOTIATION        1
@@ -979,7 +984,7 @@ struct mbedtls_ssl_config
 
     unsigned int endpoint : 1;      /*!< 0: client, 1: server               */
     unsigned int transport : 1;     /*!< stream (TLS) or datagram (DTLS)    */
-    unsigned int authmode : 2;      /*!< MBEDTLS_SSL_VERIFY_XXX             */
+    unsigned int authmode : 3;      /*!< MBEDTLS_SSL_VERIFY_XXX             */
     /* needed even with renego disabled for LEGACY_BREAK_HANDSHAKE          */
     unsigned int allow_legacy_renegotiation : 2 ; /*!< MBEDTLS_LEGACY_XXX   */
 #if defined(MBEDTLS_ARC4_C)
@@ -1139,6 +1144,9 @@ struct mbedtls_ssl_context
 #if defined(MBEDTLS_SSL_CBC_RECORD_SPLITTING)
     signed char split_done;     /*!< current record already splitted? */
 #endif /* MBEDTLS_SSL_CBC_RECORD_SPLITTING */
+#if defined(MBEDTLS_THREADING_C)
+    mbedtls_threading_mutex_t out_mutex;    /*!< output mutex         */
+#endif /* MBEDTLS_THREADING_C */
 
     /*
      * PKI layer

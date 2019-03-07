@@ -5,6 +5,21 @@ else()
     project("mbed TLS" C)
 endif()
 
+if(CMAKE_TOOLCHAIN_FILE)
+    message(STATUS "Using toolchain file ${CMAKE_TOOLCHAIN_FILE}")
+endif()
+
+include(CMakePackageConfigHelpers)
+
+set(CMAKE_EXPORT_DIR "lib/cmake/mbedtls")
+
+file(READ "${CMAKE_SOURCE_DIR}/include/mbedtls/version.h" MBEDTLS_VERSION_H)
+string(REGEX REPLACE ".*#define[\t ]+MBEDTLS_VERSION_MAJOR[\t ]+([0-9]+).*" "\\1" MBEDTLS_VERSION_MAJOR "${MBEDTLS_VERSION_H}")
+string(REGEX REPLACE ".*#define[\t ]+MBEDTLS_VERSION_MINOR[\t ]+([0-9]+).*" "\\1" MBEDTLS_VERSION_MINOR "${MBEDTLS_VERSION_H}")
+string(REGEX REPLACE ".*#define[\t ]+MBEDTLS_VERSION_PATCH[\t ]+([0-9]+).*" "\\1" MBEDTLS_VERSION_PATCH "${MBEDTLS_VERSION_H}")
+set(MBEDTLS_VERSION "${MBEDTLS_VERSION_MAJOR}.${MBEDTLS_VERSION_MINOR}.${MBEDTLS_VERSION_PATCH}")
+message(STATUS "mbed TLS version ${MBEDTLS_VERSION}")
+
 option(USE_PKCS11_HELPER_LIBRARY "Build mbed TLS with the pkcs11-helper library." OFF)
 option(ENABLE_ZLIB_SUPPORT "Build mbed TLS with zlib library." OFF)
 
@@ -47,7 +62,12 @@ set(CTR_DRBG_128_BIT_KEY_WARNING "${WARNING_BORDER}"
                          "${WARNING_BORDER}")
 
 find_package(PythonInterp)
+
+set(_FIND_ROOT_PATH_MODE_PROGRAM ${CMAKE_FIND_ROOT_PATH_MODE_PROGRAM})
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 find_package(Perl)
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM ${_FIND_ROOT_PATH_MODE_PROGRAM})
+
 if(PERL_FOUND)
 
     # If 128-bit keys are configured for CTR_DRBG, display an appropriate warning
@@ -146,15 +166,45 @@ if(CMAKE_COMPILER_IS_CLANG)
     set(CMAKE_C_FLAGS_CHECK       "-Werror -Os")
 endif(CMAKE_COMPILER_IS_CLANG)
 
-if(CMAKE_COMPILER_IS_IAR)
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --warn_about_c_style_casts --warnings_are_errors -Ohz")
-endif(CMAKE_COMPILER_IS_IAR)
+macro(configure_msvc_runtime)
+    if(MSVC)
+        if("${MSVC_RUNTIME}" STREQUAL "")
+            set(MSVC_RUNTIME "dynamic")
+        endif()
 
-if(CMAKE_COMPILER_IS_MSVC)
+        set(variables CMAKE_C_FLAGS
+            CMAKE_C_FLAGS_DEBUG CMAKE_C_FLAGS_MINSIZEREL
+            CMAKE_C_FLAGS_RELEASE CMAKE_C_FLAGS_RELWITHDEBINFO)
+
+        if(${MSVC_RUNTIME} STREQUAL "static")
+            message(STATUS "MSVC: using statically-linked runtime (/MT and /MTd).")
+            foreach(variable ${variables})
+                if(${variable} MATCHES "/MD")
+                    string(REGEX REPLACE "/MD" "/MT" ${variable} "${${variable}}")
+                endif()
+            endforeach()
+        else()
+            message(STATUS "MSVC: using dynamically-linked runtime (/MD and /MDd).")
+            foreach(variable ${variables})
+                if(${variable} MATCHES "/MT")
+                    string(REGEX REPLACE "/MT" "/MD" ${variable} "${${variable}}")
+                endif()
+            endforeach()
+        endif()
+
+        foreach(variable ${variables})
+            set(${variable} "${${variable}}" CACHE STRING "MSVC_${variable}" FORCE)
+        endforeach()
+    endif()
+endmacro(configure_msvc_runtime)
+
+if(MSVC)
     # Strictest warnings, and treat as errors
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /W3")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /WX")
-endif(CMAKE_COMPILER_IS_MSVC)
+
+    configure_msvc_runtime() # select between dynamic and static MSVC runtime
+endif(MSVC)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Coverage")
     if(CMAKE_COMPILER_IS_GNU OR CMAKE_COMPILER_IS_CLANG)
@@ -232,3 +282,22 @@ if (NOT ${CMAKE_CURRENT_BINARY_DIR} STREQUAL ${CMAKE_CURRENT_SOURCE_DIR})
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/DartConfiguration.tcl
                    ${CMAKE_CURRENT_BINARY_DIR}/DartConfiguration.tcl COPYONLY)
 endif()
+
+# installation
+
+export(PACKAGE mbedtls)
+
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/mbedtls-config.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/mbedtls-config.cmake"
+    INSTALL_DESTINATION "${CMAKE_EXPORT_DIR}")
+
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/mbedtls-config-version.cmake"
+    VERSION ${MBEDTLS_VERSION}
+    COMPATIBILITY SameMajorVersion)
+
+install(FILES
+    ${PROJECT_BINARY_DIR}/mbedtls-config.cmake
+    ${PROJECT_BINARY_DIR}/mbedtls-config-version.cmake
+    DESTINATION "${CMAKE_EXPORT_DIR}")

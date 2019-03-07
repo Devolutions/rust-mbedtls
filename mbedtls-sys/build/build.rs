@@ -129,8 +129,10 @@ fn run_conan() {
 }
 
 fn main() {
-    run_conan();
-    return;
+    if let Ok(_) = env::var("CARGO_FEATURE_CONAN_BUILD") {
+        run_conan();
+        return;
+    }
 
     let out_dir = PathBuf::from(env::var_os("OUT_DIR").expect("OUT_DIR environment not set?"));
     let src = PathBuf::from(env::var("RUST_MBEDTLS_SYS_SOURCE").unwrap_or("vendor".to_owned()));

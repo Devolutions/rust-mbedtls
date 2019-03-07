@@ -52,6 +52,22 @@ typedef struct mbedtls_threading_mutex_t
 } mbedtls_threading_mutex_t;
 #endif
 
+#if defined(MBEDTLS_THREADING_WINDOWS)
+
+#ifndef WIN32_LEAN_AND_MEAN
+#define WIN32_LEAN_AND_MEAN
+#endif
+
+#include <windows.h>
+
+typedef struct
+{
+    CRITICAL_SECTION cs;
+    char is_valid;
+} mbedtls_threading_mutex_t;
+
+#endif
+
 #if defined(MBEDTLS_THREADING_ALT)
 /* You should define the mbedtls_threading_mutex_t type in your header */
 #include "threading_alt.h"
@@ -80,6 +96,31 @@ void mbedtls_threading_set_alt( void (*mutex_init)( mbedtls_threading_mutex_t * 
                        int (*mutex_unlock)( mbedtls_threading_mutex_t * ) );
 
 /**
+ * \brief           Set your alternate threading implementation function
+ *                  pointers and initialize global mutexes. If used, this
+ *                  function must be called once in the main thread before any
+ *                  other mbed TLS function is called, and
+ *                  mbedtls_threading_free_alt() must be called once in the main
+ *                  thread after all other mbed TLS functions.
+ *
+ * \note            mutex_init() and mutex_free() don't return a status code.
+ *                  If mutex_init() fails, it should leave its argument (the
+ *                  mutex) in a state such that mutex_lock() will fail when
+ *                  called with this argument.
+ *
+ * \param mutex_init    the init function implementation
+ * \param mutex_free    the free function implementation
+ * \param mutex_lock    the lock function implementation
+ * \param mutex_unlock  the unlock function implementation
+ * \param mutex_trylock the trylock function implementation
+ */
+void mbedtls_threading_set_try_alt( void (*mutex_init)( mbedtls_threading_mutex_t * ),
+                       void (*mutex_free)( mbedtls_threading_mutex_t * ),
+                       int (*mutex_lock)( mbedtls_threading_mutex_t * ),
+                       int (*mutex_unlock)( mbedtls_threading_mutex_t * ),
+                       int (*mutex_trylock)( mbedtls_threading_mutex_t * ) );
+
+/**
  * \brief               Free global mutexes.
  */
 void mbedtls_threading_free_alt( void );
@@ -87,7 +128,7 @@ void mbedtls_threading_free_alt( void );
 
 #if defined(MBEDTLS_THREADING_C)
 /*
- * The function pointers for mutex_init, mutex_free, mutex_ and mutex_unlock
+ * The function pointers for mutex_init, mutex_free, mutex_lock, mutex_unlock and mutex_trylock
  *
  * All these functions are expected to work or the result will be undefined.
  */
@@ -95,6 +136,9 @@ extern void (*mbedtls_mutex_init)( mbedtls_threading_mutex_t *mutex );
 extern void (*mbedtls_mutex_free)( mbedtls_threading_mutex_t *mutex );
 extern int (*mbedtls_mutex_lock)( mbedtls_threading_mutex_t *mutex );
 extern int (*mbedtls_mutex_unlock)( mbedtls_threading_mutex_t *mutex );
+extern int (*mbedtls_mutex_trylock)( mbedtls_threading_mutex_t *mutex );
+
+#define MBEDTLS_THREADING_TRYLOCK   /**< The mutex trylock API is defined. */
 
 /*
  * Global mutexes
@@ -112,6 +156,8 @@ extern mbedtls_threading_mutex_t mbedtls_threading_readdir_mutex;
  * doesn't need it, but that's not a problem. */
 extern mbedtls_threading_mutex_t mbedtls_threading_gmtime_mutex;
 #endif /* MBEDTLS_HAVE_TIME_DATE && !MBEDTLS_PLATFORM_GMTIME_R_ALT */
+
+extern int mbedtls_threading_trylock; /**< The mutex trylock API is available. */
 
 #endif /* MBEDTLS_THREADING_C */
 

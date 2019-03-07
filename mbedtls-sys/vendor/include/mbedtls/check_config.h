@@ -631,6 +631,13 @@
 #define MBEDTLS_THREADING_IMPL
 #endif
 
+#if defined(MBEDTLS_THREADING_WINDOWS)
+#if !defined(MBEDTLS_THREADING_C) || defined(MBEDTLS_THREADING_IMPL)
+#error "MBEDTLS_THREADING_WINDOWS defined, but not all prerequisites"
+#endif
+#define MBEDTLS_THREADING_IMPL
+#endif
+
 #if defined(MBEDTLS_THREADING_ALT)
 #if !defined(MBEDTLS_THREADING_C) || defined(MBEDTLS_THREADING_IMPL)
 #error "MBEDTLS_THREADING_ALT defined, but not all prerequisites"
