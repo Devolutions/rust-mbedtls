@@ -53,6 +53,8 @@ impl Csr {
         unsafe { &*(&self.inner.pk as *const _ as *const _) }
     }
 
+    pub fn public_key_mut(&mut self) -> &mut ::pk::Pk{ unsafe { &mut *(&mut self.inner.pk as *mut _ as *mut _) } }
+
     pub fn as_der(&self) -> &[u8] {
         unsafe { ::core::slice::from_raw_parts(self.inner.raw.p, self.inner.raw.len) }
     }
