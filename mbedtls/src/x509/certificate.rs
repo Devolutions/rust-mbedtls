@@ -502,6 +502,22 @@ impl<'a> Builder<'a> {
         Ok(self)
     }
 
+    pub fn set_authority_key_identifier(&mut self) -> ::Result<&mut Self>{
+        unsafe {
+            try!(x509write_crt_set_authority_key_identifier(&mut self.inner)
+                .into_result())
+        };
+        Ok(self)
+    }
+
+    pub fn set_subject_key_identifier(&mut self) -> ::Result<&mut Self>{
+        unsafe {
+            try!(x509write_crt_set_subject_key_identifier(&mut self.inner)
+                .into_result())
+        };
+        Ok(self)
+    }
+
     pub fn validity(
         &mut self,
         not_before: super::Time,
